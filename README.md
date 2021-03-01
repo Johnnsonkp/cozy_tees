@@ -7,7 +7,7 @@ Cozy tees is a two-sided-marketplace application on rails that facilites the buy
 
 ### Links
 - [R9] Live Website: 
-- [R10] Github Repo: 
+- [R10] Github Repo: https://github.com/Johnnsonkp/cozy_tees 
 
 <hr>
 
@@ -27,14 +27,19 @@ For the other times we find ourselves a T-Shirt that for whatever reason isn't r
 
 There must be a faster way to get rid of the T-Shirt without losing our money right....
 
-See in a world where your presentation has a direct impact on how you are treated, from getting that promotion at work, to dating that dream partner you're eyeing. Presentation is evereything, and your presentation starts with your T-Shirt.
+See in a world where our presentation has a direct impact on how we are treated, from getting that promotion at work, to dating that dream partner . Presentation is everything, and  presentation starts with our T-Shirt.
 
 Cozy Tees is a two-sided-marketplace application that allows users to buy and sell T-Shirts. The two-sided-marketplacese caters for sellers who are trying to sell a T-Shirt that may have been an accidental buy or doesn't fit anymore and isn't what they expected. It also caters for buyers who are looking to buy quality affordable T-Shirts that are within their area. 
 
 Cozy Tees also caters to sporter fans, our sporting section has all that you need to look like a part of your favourite team/teams. 
+<br>
+<br>
 
+### [R11] Marketplace description
+<hr>
 
-[R11][R12] 
+**_Purpose_**
+
 
 
 
