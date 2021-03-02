@@ -31,7 +31,7 @@ See in a world where our presentation has a direct impact on how we are treated,
 
 Cozy Tees is a two-sided-marketplace application that allows users to buy and sell T-Shirts. The two-sided-marketplacese caters for sellers who are trying to sell a T-Shirt that may have been an accidental buy or doesn't fit anymore and isn't what they expected. It also caters for buyers who are looking to buy quality affordable T-Shirts that are within their area. 
 
-Cozy Tees also caters to sporter fans, our sporting section has all that you need to look like a part of your favourite team/teams. 
+Cozy Tees also caters to sporting fans, our sporting section has all that you need to look like a part of your favourite team/teams. 
 <br>
 <br>
 
@@ -40,25 +40,59 @@ Cozy Tees also caters to sporter fans, our sporting section has all that you nee
 
 **_Purpose_**
 
+The purpose of this marketplace is to cater for buyers who are wanting to purchase quality affiordable T-shirts at reasonable prices within their area. The purpose of this market place to to cater for sellers, who are wanting to get rid of excess clothes (T-Shirts) and recieve money back in return. The purpose of this market place app is to demonstarte my abilities as a full stack developer, utilising my aquaired skills in HTML, CSS, Javascript and Ruby on Rails into making this app. 
+<br>
+<br>
+
+**_Functionality / features_**
+
+1. User Authentication 
+2. User Authorisation
+3. Image Uploading capability 
+4. Payment system (stripe)
+5. Transactional Emails (optional)
+6. Search sorting filter (optional)
+7. Admin dashboard (optional)
+
+<br>
+<br>
+
+**_Sitemap_**
+
+<img src="app/assets/images/sitemap.png">
+
+<br>
+<br>
+
+**_Screenshots_**
+
+<br>
+<br>
+
+**_Target audience_**
 
 
+<br>
+<br>
 
-Things you may want to cover:
+**_Tech Stack_**
 
-* Ruby version
 
-* System dependencies
+<br>
+<br>
 
-* Configuration
+### [R12] User Stories
+<hr>
 
-* Database creation
+<br>
+<br>
 
-* Database initialization
+### [R13] Wireframes
+<hr>
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
+<br>
 
-* Deployment instructions
-
-* ...
+### [R14] ERD
+<hr>
