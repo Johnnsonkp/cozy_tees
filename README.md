@@ -97,44 +97,32 @@ Wireframe mocks ups with Adobe XD
 **_Landing page_**
 
 <img src="app/assets/images/landing-page.png">
-<br>
-<br>
 
 **_All Listings_**
 
 <img src="app/assets/images/all-listings.png">
-<br>
-<br>
 
 **_Sporting Section_**
 
 <img src="app/assets/images/sporting-tees.png">
-<br>
-<br>
 
 **_Search Listing & Show Listing_**
 
 <img src="app/assets/images/search-show-lisiting.png">
-<br>
-<br>
 
 **_Create new listing & Edit Listing_**
 
 <img src="app/assets/images/create-edit-listing.png">
-<br>
-<br>
 
 **_Sign up section_**
 
 <img src="app/assets/images/sign-up.png">
-<br>
-<br>
+
 
 **_Sign in section_**
 
 <img src="app/assets/images/sign-in.png">
-<br>
-<br>
+
 
 <br>
 <br>
