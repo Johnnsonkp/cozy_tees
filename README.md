@@ -78,7 +78,12 @@ The purpose of this marketplace is to cater for buyers who are wanting to purcha
 <br>
 
 **_Tech Stack_**
-
+- Programming Languages: HTML, CSS, SASS, Javascript, Ruby
+- Source Control: GitHub
+- Planning and implementation: Trello board, Adobe XD, Diagram.io
+- Deployment Platform: Heroku
+- Payment Processing: Stripe
+- Cloud Storage: AWS - S3
 
 <br>
 <br>
@@ -129,3 +134,5 @@ Wireframe mocks ups with Adobe XD
 
 ### [R14] ERD
 <hr>
+
+<img src="app/assets/images/ERD.png">
