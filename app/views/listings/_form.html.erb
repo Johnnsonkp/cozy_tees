@@ -22,8 +22,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :sex %>
-    <%= form.text_field :sex %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <h4>Sex</h4>
+  <div class="sex"></div>
+    <% sex.each do |option| %>
+      <%= form.label :sex, option.capitalize, class:"form-label" %>
+      <%= form.radio_button :sex, option, class:"radio-button" %>
+    <% end %>
   </div>
 
   <div class="field">
@@ -37,26 +45,22 @@
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
     <%= form.label :category_id %>
     <%= form.select :category_id, categories.map {|cat| [cat.name, cat.id] } %>
   </div>
 
-  <div class="field">
   <h4>Condition</h4>
+  <div class="conditions"></div>
     <% conditions.each do |option| %>
-      <%= form.label :condition, option.capitalize, class: "form-label" %>
-      <%= form.radio_button :condition, option, class: "radio-button" %>
+      <%= form.label :condition, option.capitalize, class:"form-label" %>
+      <%= form.radio_button :condition, option, class:"radio-button" %>
     <% end %>
   </div>
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.text_field :size %>
+    <%= form.select :size, sizes.map {|size| size } %> 
+     
   </div>
 
   <div class="actions">

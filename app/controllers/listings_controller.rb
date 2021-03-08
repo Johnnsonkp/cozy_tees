@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
-  before_action :set_categories_and_conditions, only: [:new, :edit]
+  before_action :set_form_variables, only: [:new, :edit]
 
   # GET /listings or /listings.json
   def index
@@ -58,9 +58,11 @@ class ListingsController < ApplicationController
   end
 
   private
-    def set_categories_and_conditions
+    def set_form_variables
       @categories = Category.all
       @conditions = Listing.conditions.keys
+      @sizes = Listing.sizes.keys
+      @sex = Listing.sexes.keys
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
