@@ -1,7 +1,43 @@
-<% if user_signed_in?%>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete%>
-    <p>Hi <%=current_user.email%></p>
-<%else%>
-    <%= link_to 'Sign In', new_user_session_path %>
-    <%= link_to 'Sign Up', new_user_registration_path %>
-<%end%>
+<section id="shared-navbar">
+
+    <div class="container">
+
+        <div class="left">
+            <form id="form">
+                <i class="fas fa-search "></i>
+                <input type="text" id="search" class="search" placeholder="search">
+            </form>
+        </div>
+
+        <div class="center">
+            <h1 class="hero">CozyTEES</h1>
+        </div>
+
+        <div class="right">
+            <div class="light" id="day-night-btn"></div>
+
+            
+            <i class="far fa-user-circle fa-2x user-drop-down">
+            <%# <i class="far fa-user fa-2x user-drop-down"></i> %>
+                <div id="display-none" class="user-box">
+                    <% if user_signed_in?%>
+                        <p>Hi <%=current_user.email%></p>
+                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'sign-out'%>
+                    <%else%>
+                        <p>Login/Sign Up</p>
+                        <%= link_to 'Sign In', new_user_session_path, class:'sign-up' %>
+                        <%= link_to 'Sign Up', new_user_registration_path, class:'sign-in' %>
+                    <%end%>
+                </div>
+            </i>
+
+            <%# <i class="fas fa-shopping-bag fa-2x"></i> %>
+            <%# <%= link_to " ", " ", class:'hand-bag'%> 
+            <div class="hand-bag" id="day-night-btn"></div>
+            
+        </div>
+
+
+    </div>
+
+</section>

@@ -1,0 +1,126 @@
+$default-color: #2f2f2f;
+$background-light: #e1e4e8;
+
+#shared-navbar{
+    height: 78px;
+    background-color: #2f2f2f;
+    color: #fff;
+}
+#shared-navbar a{
+    text-decoration: none;
+    color: #fff;
+}
+#shared-navbar .container{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#shared-navbar .left{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+#form{
+    // border: solid 1px red;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+#form #search{
+    margin: 0;
+    height: 28px;
+    width: 160px;
+    background-color: #eee;
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+.fa-search{
+    padding-left: 15px;
+}
+#shared-navbar .center{
+    justify-self: center;
+
+}
+#shared-navbar .light{
+    height: 10px;
+    width: 10px; 
+    background-image: url('http://rainbowit.net/themes/trydo/wp-content/themes/trydo/assets/images/icons/sun-01.svg');
+    background-position: center center;
+    background-size: cover;
+    background-color: $default-color;
+    border: 8px solid $default-color;
+    padding: 5px;
+    // padding: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#shared-navbar .dark{
+    height: 10px;
+    width: 10px; 
+    background-image: url('http://rainbowit.net/themes/trydo/wp-content/themes/trydo/assets/images/icons/vector.svg');
+    background-position: center center;
+    background-size: cover;
+    background-color: $default-color;
+    border: 8px solid $default-color;
+    padding: 5px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#shared-navbar .right{
+    display: flex;
+    width: 14%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    // border: 1px solid red;
+}
+#shared-navbar .sign-out{
+    font-size: 16px;
+    color: black;
+}
+// #shared-navbar #display-none{
+//     // display: none;
+// }
+#shared-navbar .user-box{
+    opacity: 0;
+    cursor: pointer;
+    border: solid 1px $default-color;
+    background-color: $background-light;
+    color: black;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    height: 125px;
+    width: 200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+#shared-navbar .right i:hover{
+    cursor: pointer;
+    .user-box{
+        opacity: 1;
+    }
+}
+
+.hand-bag{
+    background-image: url('hand_bag.png');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    height: 30px;
+    width: 30px;
+    // padding-left: 20%;
+}
+#shared-navbar .center .hero{
+    font-size: 35px;
+}
