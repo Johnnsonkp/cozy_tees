@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :set_user_listing, only: [:update, :edit, :destroy]
   before_action :set_form_variables, only: [:new, :edit]
 
   # GET /listings or /listings.json
@@ -24,7 +25,7 @@ class ListingsController < ApplicationController
 
   # POST /listings or /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -60,6 +61,14 @@ class ListingsController < ApplicationController
   end
 
   private
+    def set_user_listing
+      @listing = current_user.listings.find_by_id(params[:id])
+      if @listing == nil
+        flash[:alert] = "You don't have permission to do that!"
+        redirect_to listings_path
+      end
+    end
+
     def set_form_variables
       @categories = Category.all
       @conditions = Listing.conditions.keys
