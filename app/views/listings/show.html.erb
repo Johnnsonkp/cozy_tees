@@ -45,5 +45,10 @@
   <%= @listing.size %>
 </p>
 
+<p>
+  <strong>feature:</strong>
+  <%= @listing.features.map {|f| f.name} %>
+</p>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

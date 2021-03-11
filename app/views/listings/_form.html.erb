@@ -49,6 +49,12 @@
     <%= form.select :category_id, categories.map {|cat| [cat.name, cat.id] } %>
   </div>
 
+
+  <div class="field">
+    <h4>Features</h4>
+    <%= form.collection_check_boxes :feature_ids, features, :id, :name %>
+  </div>
+
   <h4>Condition</h4>
   <div class="conditions"></div>
     <% conditions.each do |option| %>

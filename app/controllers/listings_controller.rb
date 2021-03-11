@@ -1,10 +1,12 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_form_variables, only: [:new, :edit]
 
   # GET /listings or /listings.json
   def index
     @listings = Listing.all
+    @features
   end
 
   # GET /listings/1 or /listings/1.json
@@ -63,6 +65,7 @@ class ListingsController < ApplicationController
       @conditions = Listing.conditions.keys
       @sizes = Listing.sizes.keys
       @sex = Listing.sexes.keys
+      @features = Feature.all
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
@@ -71,6 +74,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :price, :sex, :color, :brand, :description, :category_id, :condition, :size)
+      params.require(:listing).permit(:title, :price, :sex, :color, :brand, :description, :category_id, :condition, :size, feature_ids: [])
     end
 end
