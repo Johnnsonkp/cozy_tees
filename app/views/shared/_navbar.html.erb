@@ -10,34 +10,58 @@
         </div>
 
         <div class="center">
-            <h1 class="hero">CozyTEES</h1>
+            <%# <h1 class="hero">CozyTEES</h1> %>
+            <h1><%= link_to "-- CozyTees --", root_path, class:"hero", method: :get %></h1>
+            <span>Marketplace</span>
         </div>
 
         <div class="right">
+          
             <div class="light" id="day-night-btn"></div>
 
-            
-            <i class="far fa-user-circle fa-2x user-drop-down">
-            <%# <i class="far fa-user fa-2x user-drop-down"></i> %>
-                <div id="display-none" class="user-box">
-                    <% if user_signed_in?%>
-                        <p>Hi <%=current_user.email%></p>
-                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'sign-out'%>
-                    <%else%>
-                        <p>Login/Sign Up</p>
-                        <%= link_to 'Sign In', new_user_session_path, class:'sign-up' %>
-                        <%= link_to 'Sign Up', new_user_registration_path, class:'sign-in' %>
-                    <%end%>
+    
+                <%# <i class="far fa-user-circle fa-2x user-drop-down"> %>
+                <div class="user-pic user-drop-down">
+                <%# <i class="far fa-user fa-2x user-drop-down"></i> %>
+                    <div id="display-none" class="user-box">
+                        <% if user_signed_in?%>
+                            <p>Hi <%=current_user.email%></p>
+                            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'sign-out'%>
+                        <%else%>
+                            <p>Login/Sign Up</p>
+                            <%= link_to 'Sign In', new_user_session_path, class:'sign-up' %>
+                            <%= link_to 'Sign Up', new_user_registration_path, class:'sign-in' %>
+                        <%end%>
+                    </div>
+                    <%# </i> %>
                 </div>
-            </i>
+            
 
-            <%# <i class="fas fa-shopping-bag fa-2x"></i> %>
-            <%# <%= link_to " ", " ", class:'hand-bag'%> 
-            <div class="hand-bag" id="day-night-btn"></div>
+            <div class="heart heart-select"></div>
+            <div class="hand-bag bag-select"></div>
+            
             
         </div>
+    </div>
+    <div class="second-nav">
+        <div class="container">
+            <ul class="left">
+                <li><%= link_to "All Tees", listings_path, method: :get %></li>
+                <li>Retro Tees</li>
+                <li>Cozy Sports</li>
+            </ul>
 
+            <%# <ul class="center">
+                <li>Him</li> <hr>
+                <li>Her</li> 
+            </ul> %>
 
+            <ul class="right">
+                <li><%= link_to "Market Place", listings_path, method: :get %></li>
+                <li><%= link_to "Create Listing", new_listing_path, method: :get %></li>
+                <li><%= link_to "Manage Listings", listings_path, method: :get %></li>
+            </ul>
+        </div>
     </div>
 
 </section>

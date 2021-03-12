@@ -1,8 +1,27 @@
 <section id="pages-home">
-    <h1>Welcome to the marketplace</h1>
+    <header id="showcase">
+    </header>
 
+    <div class="about">
+        <h1>About</h1>
+        <p>The history of T-shirt is very interesting. The T-shirt has been a part of clothing since ancient Egypt. A type of modern T-shirt was developed in England in the end of 19th century. The idea of a T-shirt came to the USA during the World War II when American soldiers saw the cotton undershirts of European soldiers. That is a short story of T-shirts origin.</p>
+        <%= link_to 'Shop Now', listings_path, method: :get, class:'about-btn'%>
+    </div>
 
-    <button><%= link_to 'Listings', listings_path %></button>
+<hr class=".style-two">
+    <h1 class="or-header">Or Shop For:</h1>
+    <div class="container">
+        <div class="left">
+            <h1>For Him</h1>
+            <img src='assets/for-him2.png'>
+        </div>
+
+        <div class="right">
+            <h1>For Her</h1>
+            <img src='assets/for-her2.png'>
+        </div>
+    </div>
+
 
 </section>
 

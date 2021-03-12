@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+
+
 
 <h1>Listings</h1>
 
@@ -33,8 +34,8 @@
         <td><%= listing.size %></td>
         <td><%= listing.features.map {|f| f.name} %></td>
         <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) if current_user.id == listing.user_id%></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } if current_user.id == listing.user_id %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? && current_user.id == listing.user_id%></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.id == listing.user_id %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,6 +43,6 @@
 
 <br>
 
-<button><%= link_to 'Back', root_path %></button> |
-<button><%= link_to 'Create Listing', new_listing_path %></button> 
+<button><%= link_to 'Back', root_path, method: :get %></button> |
+<button><%= link_to 'Create Listing', new_listing_path, method: :get %></button> 
 

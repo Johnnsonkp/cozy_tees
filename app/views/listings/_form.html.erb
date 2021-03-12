@@ -69,6 +69,12 @@
      
   </div>
 
+  <div class="field">
+    <%=form.label :picture, class:'form-label'%>
+    <%=form.file_field :picture, accept: 'image/png,image/jpg,image/jpeg', class:'form-control-file'%>
+    <small class='form-text text-muted'> PNG, JPG, or JPEG only</small>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Picture:</strong>
+    <%=image_tag listing_img(@listing) class:"img"%>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @listing.title %>
 </p>
@@ -47,7 +52,9 @@
 
 <p>
   <strong>feature:</strong>
-  <%= @listing.features.map {|f| f.name} %>
+  <% @listing.features.each do |feat| %>
+      <span><%=feat.name%></span>
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |

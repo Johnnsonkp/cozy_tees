@@ -1,10 +1,18 @@
 $default-color: #2f2f2f;
 $background-light: #e1e4e8;
+$default-color: #2f2f2f;
+$default-color: #161b22;
+$default-color-dark: #0d1117;
+$default-light: #fff;
+$light-body: #26374c;
+
 
 #shared-navbar{
-    height: 78px;
-    background-color: #2f2f2f;
+    height: 90px;
+    width: 100vw;
+    background-color: #111111;
     color: #fff;
+    // overflow: hidden;
 }
 #shared-navbar a{
     text-decoration: none;
@@ -18,6 +26,9 @@ $background-light: #e1e4e8;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // justify-content: space-around;
+    // border: solid 1px red;
+    box-sizing: border-box;
 }
 #shared-navbar .left{
     display: flex;
@@ -34,7 +45,8 @@ $background-light: #e1e4e8;
 #form #search{
     margin: 0;
     height: 28px;
-    width: 160px;
+    width: 229px;
+    // padding-right: 92px;
     background-color: #eee;
     border: 1px solid transparent;
     border-radius: 15px;
@@ -46,6 +58,11 @@ $background-light: #e1e4e8;
     justify-self: center;
 
 }
+// #shared-navbar .center .hero{
+//     // padding-right: 88px;
+//     // margin-right: 82%;
+//     font-size: 100px;
+// }
 #shared-navbar .light{
     height: 10px;
     width: 10px; 
@@ -53,11 +70,12 @@ $background-light: #e1e4e8;
     background-position: center center;
     background-size: cover;
     background-color: $default-color;
-    border: 8px solid $default-color;
-    padding: 5px;
-    // padding: 8px;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
     border-radius: 30px;
     cursor: pointer;
+    margin-top: 1px;
 }
 #shared-navbar .dark{
     height: 10px;
@@ -66,18 +84,48 @@ $background-light: #e1e4e8;
     background-position: center center;
     background-size: cover;
     background-color: $default-color;
-    border: 8px solid $default-color;
-    padding: 5px;
+    background-color: #fff;
+    border: 3px solid #fff;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
     border-radius: 30px;
     cursor: pointer;
+    margin-top: 1px;
 }
 #shared-navbar .right{
     display: flex;
     width: 14%;
+    width: 210px;
     height: 100%;
     align-items: center;
     justify-content: space-evenly;
     // border: 1px solid red;
+}
+.user-pic{
+    height: 20px;
+    width: 20px;
+    background-image: url('user_pic.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // border: solid 1px red;
+    background-size: 20px;
+    height: 30px;
+    width: 30px;
+    
+}
+.black-user-pic{
+    height: 20px;
+    width: 20px;
+    background-image: url('black-user.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // border: solid 1px red;
+    background-size: 20px;
+    height: 30px;
+    width: 30px;
 }
 #shared-navbar .sign-out{
     font-size: 16px;
@@ -87,13 +135,15 @@ $background-light: #e1e4e8;
 //     // display: none;
 // }
 #shared-navbar .user-box{
-    opacity: 0;
+    display: none !important;
+    opacity: 1;
     cursor: pointer;
     border: solid 1px $default-color;
     background-color: $background-light;
     color: black;
     position: absolute;
     top: 8%;
+    top: 17%;
     right: 10%;
     height: 125px;
     width: 200px;
@@ -106,21 +156,126 @@ $background-light: #e1e4e8;
     box-sizing: border-box;
     
 }
-#shared-navbar .right i:hover{
-    cursor: pointer;
-    .user-box{
-        opacity: 1;
-    }
-}
+// #shared-navbar .user-box:hover{
+//     display: none;
+// }
+// #shared-navbar .right .user-drop-down:hover{
+//     cursor: pointer;
+//     .user-box{
+//         transition: 1s ease-out;
+//         opacity: 1;
+//         z-index: 1;
+//     }
+// }
 
 .hand-bag{
     background-image: url('hand_bag.png');
     background-repeat: no-repeat;
-    background-size: 26px;
+    background-size: 21px;
+    background-position: center center;
     height: 30px;
     width: 30px;
     // padding-left: 20%;
 }
+.black-hand-bag{
+    background-image: url('black-hand-bag.png');
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: center center;
+    height: 30px;
+    width: 30px;
+    // padding-left: 20%;
+}
+.heart{
+    background-image: url('heart.png');
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: center center;
+    height: 30px;
+    width: 30px;
+}
+.black-heart{
+    background-image: url('black-heart.png');
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: center center;
+    height: 30px;
+    width: 30px;
+}
+#shared-navbar .center{
+    // border: 1px solid red;
+    width: 40%;
+    text-align: center;
+}
 #shared-navbar .center .hero{
-    font-size: 35px;
+    font-size: 48px;
+    padding-right: 48px;
+    text-align: center;
+}
+#shared-navbar .center span{
+    letter-spacing: 6px;
+    padding-right: 35px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+// second nav
+#shared-navbar .second-nav{
+    width: 100vw;
+    height: 33px;
+    background-color: $background-light;
+    // background-color: #222222;
+    color: black;
+    border-bottom: 0.2px solid lightgray;
+    // margin-bottom: 20px;
+}
+#shared-navbar .second-nav ul{
+    list-style: none;
+}
+#shared-navbar .second-nav ul li{
+    padding-left: 12px; 
+    padding-right: 12px;
+    padding-top: 17px; 
+    padding-bottom: 17px;
+    // height: 50%;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+#shared-navbar .second-nav .left li{
+    border: 0.2px solid lightgray;
+}
+#shared-navbar .second-nav .left{
+    text-align: left;
+    // border: 0.2px solid lightgray;
+    // opacity: 0.6;
+    padding-left: 0;
+}
+// #shared-navbar .second-nav .center{
+//     display: flex;
+//     opacity: 0.6;
+// }
+#shared-navbar .second-nav a{
+    color: black;
+    text-decoration: none;
+}
+
+#shared-navbar .second-nav .right{
+    width: auto;
+    // opacity: 0.6;
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
+#shared-navbar .second-nav li:hover{
+    // height: 100%;
+    background-color: $default-color;
+    color: #fff !important;
+    opacity: 0.6;
+    border-bottom: transparent;
+    a{
+        color: #fff;
+    }
 }
