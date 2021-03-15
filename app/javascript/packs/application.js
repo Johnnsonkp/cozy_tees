@@ -3,16 +3,44 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import 'bootstrap'
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+// import 'jquery'
+// import 'jquery_ujs'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 window.onload=function(){
+
+    $(function() {
+        $('#pictureInput').on('change', function(event) {
+          var files = event.target.files;
+          var image = files[0]
+          var reader = new FileReader();
+        //   console.log(image.size);
+
+          reader.onload = function(file) {
+            var img = new Image();
+            // console.log(file);
+            $(img).height(300).width(350);
+            img.src = file.target.result;
+            // console.log(image.size);
+
+            $('#target').html(img);
+            // console.log(image);
+            
+          }
+
+          reader.readAsDataURL(image);
+        //   console.log(files);
+        });
+      });
+
 
     const allLinks = document.querySelectorAll('a')
     // To refresh the javascript on the page each time a link is clicked 

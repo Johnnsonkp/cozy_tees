@@ -8,3 +8,26 @@
     width: 30%;
     height: 500px;
 }
+// #target{
+//     width: 30% !important;
+//     overflow: hidden;
+// }
+// .small {
+//     width: 156px !important;
+//     height: auto !important;
+// }
+
+#listings-forms{
+    padding-top: 50px;
+    min-height: 150vh;
+    width: 100vw;
+    background-color: #191919;
+    color: #fff;
+}
+#listings-forms .container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    // flex-direction: column;
+    border: 1px solid red;
+}

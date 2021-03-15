@@ -2,7 +2,12 @@
 
 <p>
   <strong>Picture:</strong>
-    <%=image_tag listing_img(@listing) class:"img"%>
+    
+    <%if @listing.picture.attached?%>
+      <%=image_tag @listing.picture, class:"thumbnail card-img top img"%>
+    <%else%>
+      <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"thumbnail card-img top"%>
+    <%end%>
 </p>
 
 <p>
@@ -12,7 +17,14 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @listing.price %>
+  <%# <%= @listing.price %> 
+    <%if current_user && @listing.purchased == false%>
+        <button data-stripe="payment" class='btn pay-btn'> Buy: $<%=@listing.price%></button>
+    <%elsif @listing.purchased == true%>
+        <button class="btn" disabled>SOLD</button>
+    <%else%>
+        <%= button_to "Login to buy", new_user_session_path, class:"btn"%>
+    <%end%>
 </p>
 
 <p>
@@ -57,5 +69,24 @@
   <%end%>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%=link_to "Edit", edit_listing_path(@listing.id), class: "btn edit-btn" if current_user && current_user.id == @listing.user_id%>
+<%=link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"} , class: "btn delete-btn" if current_user && current_user.id == @listing.user_id%>
+
+
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const button = document.querySelector("[data-stripe='payment']");
+  if (button){
+    button.addEventListener('click', () =>{
+      const stripe = Stripe(
+        "<%=Rails.application.credentials.dig(:stripe, :public_key)%>"
+      );
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id%>"
+      });
+  });
+  }
+    
+</script>
