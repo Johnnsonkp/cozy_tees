@@ -1,92 +1,92 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Picture:</strong>
-    
-    <%if @listing.picture.attached?%>
-      <%=image_tag @listing.picture, class:"thumbnail card-img top img"%>
-    <%else%>
-      <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"thumbnail card-img top"%>
-    <%end%>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%# <%= @listing.price %> 
-    <%if current_user && @listing.purchased == false%>
-        <button data-stripe="payment" class='btn pay-btn'> Buy: $<%=@listing.price%></button>
-    <%elsif @listing.purchased == true%>
-        <button class="btn" disabled>SOLD</button>
-    <%else%>
-        <%= button_to "Login to buy", new_user_session_path, class:"btn"%>
-    <%end%>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @listing.sex %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @listing.color %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @listing.brand %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @listing.category.name %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @listing.condition %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @listing.size %>
-</p>
-
-<p>
-  <strong>feature:</strong>
-  <% @listing.features.each do |feat| %>
-      <span><%=feat.name%></span>
+<section id="listings-show">  
+  <% if notice == nil%>
+    <p id="notice" class="display-none"><%= notice %></p>
+  <%else%>
+    <p id="notice"><%= notice %></p>
   <%end%>
-</p>
 
-<%=link_to "Edit", edit_listing_path(@listing.id), class: "btn edit-btn" if current_user && current_user.id == @listing.user_id%>
-<%=link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"} , class: "btn delete-btn" if current_user && current_user.id == @listing.user_id%>
+  <div class="container">
+
+    <div class="left">  
+        <%if @listing.picture.attached?%>
+          <%=image_tag @listing.picture, class:"img"%>
+        <%else%>
+          <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"img"%>
+        <%end%>
+    </div>
+<hr>
+    <div class="right">
+      <div class="title">
+        <%# <strong>Title:</strong> %>
+        <%= @listing.title %>
+      </div>
+
+      <div class="brand-color-sex-size">
+        <p>
+          <strong>Brand:</strong>
+          <%= @listing.brand %>
+        </p>
+
+        <p>
+          <strong>Color:</strong>
+          <%= @listing.color %>
+        </p>
+
+        <p>
+          <strong>Sex:</strong>
+          <%= @listing.sex %>
+        </p>
+
+        <p>
+          <strong>Size:</strong>
+          <%= @listing.size %>
+        </p>
+      </div>
 
 
+      <p class="condition">
+        <strong>Condition:</strong>
+        <%= @listing.condition %>
+      </p>
+
+      <p class="category">
+        <strong>Category:</strong>
+        <%= @listing.category.name %>
+      </p>
+
+      <p class="features">
+        <%# <strong>feature:</strong> %>
+        <% @listing.features.each do |feat| %>
+            <span class="feature"><%=feat.name%></span>
+        <%end%>
+      </p>
+
+      <p class="description">
+        <%# <strong>Description:</strong> %>
+        <%= @listing.description %>
+      </p>
+
+      <p>
+        <%if current_user && @listing.purchased == false%>
+            <button data-stripe="payment" data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> Buy: $<%=@listing.price%></button>
+        <%elsif @listing.purchased == true%>
+            <button class="btn" disabled>SOLD</button>
+        <%else%>
+            <%= button_to "Login to buy", new_user_session_path, class:"btn"%>
+        <%end%>
+      </p>
+
+      <%=link_to "Edit", edit_listing_path(@listing.id), class: "btn edit-btn" if current_user && current_user.id == @listing.user_id%>
+
+      <%=link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"} , class: "btn delete-btn" if current_user && current_user.id == @listing.user_id%>
+    </div>
+
+  </div>
 
 
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-  const button = document.querySelector("[data-stripe='payment']");
-  if (button){
-    button.addEventListener('click', () =>{
-      const stripe = Stripe(
-        "<%=Rails.application.credentials.dig(:stripe, :public_key)%>"
-      );
-      stripe.redirectToCheckout({
-        sessionId: "<%= @session_id%>"
-      });
-  });
-  }
-    
-</script>
+    <%= javascript_include_tag "https://js.stripe.com/v3/" %>
+    <%= javascript_pack_tag "stripe-button"%>
+
+<section>
+
+

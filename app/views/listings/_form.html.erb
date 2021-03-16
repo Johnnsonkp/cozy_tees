@@ -1,5 +1,6 @@
 <section id="listings-forms">
-
+  <div class="showcase"></div>
+  <%# <hr> %>
   <div class="container">
 
     <div class="left">
@@ -20,71 +21,90 @@
           </div>
         <% end %>
 
-        <div class="field">
-          <%= form.label :title %>
-          <%= form.text_field :title %>
+        <div class="group">
+          <div class="field title">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+          </div>
+
+          <div class="field price">
+            <%= form.label :price %>
+            <%= form.number_field :price %>
+          </div>
         </div>
 
-        <div class="field">
-          <%= form.label :price %>
-          <%= form.number_field :price %>
+        <div class="description-color-brand">
+          <div class="field text-area-field">
+            <%= form.label :description %>
+            <%= form.text_area :description %>
+          </div>
+
+          <div class="color-brand">
+            <div class="field">
+              <%= form.label :color %>
+              <%= form.text_field :color, class:"text_field" %>
+            </div>
+
+            <div class="field">
+              <%= form.label :brand %>
+              <%= form.text_field :brand %>
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <%= form.label :description %>
-          <%= form.text_area :description %>
+        <div class="sex-features-conditions">
+          <div class="sex">
+            <h4>Sex</h4>
+            <div class="sex-btn">
+              <% sex.each do |option| %>
+                <%= form.label :sex, option.capitalize, class:"form-label" %>
+                <%= form.radio_button :sex, option, class:"radio-button" %>
+              <% end %>
+            </div>
+          </div>
+          
+          <%# <hr> %>
+          <div class="field features">
+            <h4>Features</h4>
+            <div class="features-content">
+              <%= form.collection_check_boxes :feature_ids, features, :id, :name %>
+            </div>
+          </div>
+
+          <%# <hr> %>
+          <div class="conditions">
+            <h4>Condition</h4>
+            <div class="conditions-content">
+              <% conditions.each do |option| %>
+                <%= form.label :condition, option.capitalize, class:"form-label" %>
+                <%= form.radio_button :condition, option, class:"radio-button" %>
+              <% end %>
+            </div>
+          </div>
         </div>
 
-        <h4>Sex</h4>
-        <div class="sex">
-          <% sex.each do |option| %>
-            <%= form.label :sex, option.capitalize, class:"form-label" %>
-            <%= form.radio_button :sex, option, class:"radio-button" %>
-          <% end %>
+        <div class="size-category">
+          <div class="field">
+            <%= form.label :size %>
+            <%= form.select :size, sizes.map {|size| size } %> 
+          </div>
+
+          <div class="field">
+            <%= form.label :category_id %>
+            <%= form.select :category_id, categories.map {|cat| [cat.name, cat.id] } %>
+          </div>
         </div>
+    
 
-        <div class="field">
-          <%= form.label :color %>
-          <%= form.text_field :color %>
-        </div>
-
-        <div class="field">
-          <%= form.label :brand %>
-          <%= form.text_field :brand %>
-        </div>
-
-        <div class="field">
-          <%= form.label :category_id %>
-          <%= form.select :category_id, categories.map {|cat| [cat.name, cat.id] } %>
-        </div>
-
-
-        <div class="field">
-          <h4>Features</h4>
-          <%= form.collection_check_boxes :feature_ids, features, :id, :name %>
-        </div>
-
-        <h4>Condition</h4>
-        <div class="conditions"></div>
-          <% conditions.each do |option| %>
-            <%= form.label :condition, option.capitalize, class:"form-label" %>
-            <%= form.radio_button :condition, option, class:"radio-button" %>
-          <% end %>
-        </div>
-
-        <div class="field">
-          <%= form.label :size %>
-          <%= form.select :size, sizes.map {|size| size } %> 
-        </div>
-
-        <div class="field">
+        <div class="field picture">
           <%=form.label :picture, class:'form-label'%>
           <%=form.file_field :picture, accept: 'image/png,image/jpg,image/jpeg', class:'form-control-file', type:'file', id:'pictureInput'%>
           <small class='form-text text-muted'> PNG, JPG, or JPEG only</small>
         </div>
 
         <div class="actions">
-          <%= form.submit %>
+          <%= form.submit class:"submit-btn"%>
+          <%= link_to 'Cancel', listings_path, class:"cancel-btn", method: :get %>
         </div>
 
       <% end %>

@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // Listings page 
-
 .img{
     width: 30%;
     height: 500px;
@@ -18,16 +17,412 @@
 // }
 
 #listings-forms{
-    padding-top: 50px;
-    min-height: 150vh;
+    // padding-top: 50px;
+    margin-top: 34px;
+    min-height: 120vh;
     width: 100vw;
     background-color: #191919;
     color: #fff;
 }
+.showcase{
+    height: 220px;
+    width: 100vw;
+    background: url('showcase-3.png');
+    background-blend-mode: lighten;
+    background-color: rgba(255,255,255,0.5);
+}
+hr{
+    margin-top: 30px;
+}
 #listings-forms .container{
+    padding-top: 30px;
     width: 90%;
     margin: auto;
     display: flex;
     // flex-direction: column;
+    // border: 1px solid red;
+}
+#listings-forms .left{
+    // border: 1px solid red;
+    // border-top: 1px solid lightgray;
+    // border-right: 1px solid lightgray;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    width: 350px;
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+#listings-forms .right{
+    // border: 1px solid red;
+    // border-top: 1px solid lightgray;
+    // border-left: 1px solid lightgray;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    // width: 60%;
+    // display:flex;
+    // flex-direction: row;
+    padding-top: 20px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 30px;
+    // margin: auto;
+    flex: 1;
+}
+#listings-forms .left #target{
+    background-color: rgba(211, 211, 211,0.1);
+    // opacity: 1;
+    // border: 1px solid red;
+    height: 400px;
+    width: 350px;
+
+}
+input{
+    width: 100%;
+}
+textarea{
+    width: 96.5%;
+    height: 90px;
+    padding: 10px;
+    // box-sizing: border-box;
+}
+#listings-forms .right .group{
+    display: flex;
+    justify-content: space-between;
+}
+#listings-forms .right .group .title{
+    flex:0.8;
+    // display:none;
+}
+#listings-forms .right .group .price .number_field{
+    flex: 0.2;
+    // border: 1px solid red;
+    display: none;
+}
+.description-color-brand{
+    padding-top: 10px;
+    display:flex;
+    justify-content: space-between;
+}
+// .color-brand{
+//     flex: 0.2;
+//     border: 1px solid red;
+
+// }
+// .color-brand .text_field{
+//     width: 100%;
+//     border: 1px solid red;
+// }
+.text-area-field{
+    flex: 0.8;
+}
+.sex-features-conditions{
+    // padding-top: 10px;
+    display: flex;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    // padding: 10px;
+    // margin-right: 80px;
+    // justify-content: space-between;
+}
+#listings-forms .right .sex{
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 45px;
+    // justify-content: flex-start;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    // margin-right: 20px;
+    padding: 10px;
+}
+// #listings-forms .right .sex h4{
+//     flex: 1;
+// }
+#listings-forms .right .sex .sex-btn{
+    display: flex;
+    padding-top: 10px;
+}
+// Features form section 
+#listings-forms .right .features{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+}
+
+#listings-forms .right .features-content{
+    // border: 1px solid red;
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+}
+div.field.features{
+    margin-bottom: 0 !important;
+}
+
+#listings-forms .right .conditions{
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid red;
+    width: 25%;
+    // margin-left: 10px;
+    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    padding: 10px;
+}
+#listings-forms .right .conditions-content{
+    display: flex;
+    // border: 1px solid red;
+    padding-top: 10px;
+    width: 100%;
+}
+
+// size category form section
+
+#listings-forms .right .size-category{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#listings-forms .right .size-category .field{
+    padding-right: 20px;
+}
+
+.picture{
+    padding-bottom: 10px;
+}
+// .action{
+//     width: 150px;
+//     height: 100px;
+// }
+.actions a{
+    text-decoration: none;
+    color: black;
+}
+.submit-btn{
+    width: 110px;
+    height: 30px;
+    cursor: pointer;
+    background-color: orange;
+    color: black;
+    border: 1px solid transparent;
+}
+.cancel-btn{
+    padding: 5px 30px;
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+    border: 1px solid transparent;
+
+}
+
+
+// Listings-index 
+#listings-index{
+    min-height: 120vh;
+    width: 100vw;
+    background-color: #191919; 
+    margin-top: 34px;
+    color: #fff;
+}
+#listings-index a{
+    text-decoration: none;
+    height: 300px !important;
+}
+#listings-index .img{
+    width: 300px !important;
+    height: 300px !important;
+    cursor: pointer;
+    // display: none;
+}
+#listings-index .img:hover{
+    background-color: red;
+    background-blend-mode: overlay;
+    opacity: 0.8;
+}
+#listings-index .container{
+    padding-top: 50px;
+    width: 90%;
+    margin: auto;
+    // overflow: hidden;
+    display: flex;
+    // border: 1px solid red;
+    justify-content: space-evenly;
+}
+#listings-index .side-search{
+    margin-top: 15px;
+    width: 450px;
+    height: 122vh;
+    background-color: lightgray;
+    padding-top: 15px;
+    // border: 1px solid red;
+}
+#listings-index .listings-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // border: 1px solid red;
+}
+#listings-index .listing{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#listings-index .title-price{
+    height: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    color: black;
+    padding: 15px;
+    box-sizing: border-box;
+}
+#listings-index .showcase{
+    height: 220px;
+    width: 100vw;
+    background: url('showcase-3.png');
+    background-blend-mode: lighten;
+    background-color: rgba(255,255,255,0.5);
+}
+.price-view-btn {
+    display: flex;
+    align-self: flex-end;
+    height: 100%;
+    // padding-top: 15px;
+    justify-self: flex-end;
+    // flex-direction: column;
+    // border: 1px solid red;
+}
+.price-view-btn p{
+    height: 32px;
+    width: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+.btn{
+    padding-top: 8px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    
+}
+.pay-btn{
+    background-color: green;
+    color: white;
+    border: 1px solid transparent;
+}
+.view-more-btn{
+    // height: 33px;
+    // padding-top: 8px;
+    padding-bottom: 20px;
+    // padding-right: 10px;
+    // padding-left: 10px;
+    background-color: #f2f2f2;;
+    width: 100%;
+    border: 1px solid darkgray;
+}
+.display-none{
+    display: none;
+}
+
+// Show section
+#listings-show{
+    min-height: 90vh;
+    width: 100vw;
+    color: #fff;
+    background-color: #191919; 
+    margin-top: 34px;
+}
+#listings-show .container{
+    padding-top: 40px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+#listings-show .left{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    // padding-left: 10px;
+    padding-right: 60px;
+}
+#listings-show .img{
+    width: 500px;
+}
+hr {
+    border: 1px solid rgba(255,255,255,0.5);
+}
+#listings-show .right{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 60px;
+    padding-right: 0;
+}
+#listings-show .right .title{
+    font-size: 35px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+#listings-show .right .btn{
+    width: 100px;
+    height: 50px;
+    margin-bottom: 50px;
+}
+#listings-show .right .description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    font-weight: 100;
+    border: 1px solid rgba(211, 211, 211,0.5);
+    padding: 15px;
+}
+.brand-color-sex-size{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-bottom: 15px;
+}
+.condition{
+    padding-bottom: 15px;
+}
+.category{
+    padding-bottom: 15px;
+}
+.features{
+    padding-bottom: 15px;
+}
+.feature{
+    background-color: orange;
+    border: 1px solid orange; 
+    border-radius: 6px;
+    padding: 1px 8px;
+}
+#listings-show  a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+#listings-show .edit-btn, .delete-btn{
+    // width: 100px;
+    // height: 100px;
+    // border: 1px solid red;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+#listings-show .delete-btn{
     border: 1px solid red;
+    background-color: red;
+    color: #fff;
+}
+#listings-show .edit-btn{
+    border: 1px solid rgba(211, 211, 211,0.5);
+    background-color: rgba(211, 211, 211,0.5);
 }

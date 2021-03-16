@@ -1,48 +1,56 @@
+<section id="listings-index">
+
+<% if notice == nil%>
+  <p id="notice" class="display-none"><%= notice %></p>
+<%else%>
+  <p id="notice"><%= notice %></p>
+<%end%>
+
+  <div class="showcase"></div>
+
+  <div class="container">
+    <div class="side-search">hello
+    </div>
+
+    <div class="listings-wrapper">
+      <% @listings.each do |listing| %>
+        <div class="listing">
+            <%if listing.picture.attached?%>
+              <%# <%=image_tag listing.picture, class:"img"%> 
+              <%= link_to image_tag(listing.picture, class:"img"), listing %>
+            <%else%>
+              <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"img"%>
+            <%end%>
+      
+          <div class="title-price">
+            
+              <strong><%= listing.title %></strong>
+              <%# <%= listing.price %>
+              <div class="price-view-btn">
+                <p>
+                  <%if current_user && listing.purchased == false%>
+                      <button data-stripe='payment' data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> Buy: $<%=listing.price%></button>
+                  <%elsif listing.purchased == true%>
+                      <button class="btn" disabled>SOLD</button>
+                  <%else%>
+                      <%= button_to "Login to buy ", new_user_session_path, class:"btn"%>
+                  <%end%>
+                </p>
+                <%# <p><button class="btn">View More</button></p> %>
+                <p><button class="btn view-more-btn"><%= link_to "View More", listing%></button></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+  </div>
 
 
 
-<h1>Listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Sex</th>
-      <th>Color</th>
-      <th>Brand</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Condition</th>
-      <th>Size</th>
-      <th>Feature</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.title %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.sex %></td>
-        <td><%= listing.color %></td>
-        <td><%= listing.brand %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.category.name %></td>
-        <td><%= listing.condition %></td>
-        <td><%= listing.size %></td>
-        <td><%= listing.features.map {|f| f.name} %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) if user_signed_in? && current_user.id == listing.user_id%></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.id == listing.user_id %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</section>
 
-<br>
-
-<button><%= link_to 'Back', root_path, method: :get %></button> |
-<button><%= link_to 'Create Listing', new_listing_path, method: :get %></button> 
-
+<%= javascript_include_tag "https://js.stripe.com/v3/" %>
+<%= javascript_pack_tag "stripe-button"%>

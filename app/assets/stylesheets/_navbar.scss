@@ -1,5 +1,6 @@
 $default-color: #2f2f2f;
 $background-light: #e1e4e8;
+$background-light: #f2f2f2;
 $default-color: #2f2f2f;
 $default-color: #161b22;
 $default-color-dark: #0d1117;
@@ -8,7 +9,7 @@ $light-body: #26374c;
 
 
 #shared-navbar{
-    height: 90px;
+    height: 95px;
     width: 100vw;
     background-color: #111111;
     color: #fff;
@@ -36,8 +37,9 @@ $light-body: #26374c;
     align-items: center;
 }
 #form{
-    // border: solid 1px red;
+    border: solid 1px lightgray;
     background-color: #eee;
+    background-color: $background-light;
     border-radius: 10px;
     margin: 0;
     padding: 0;
@@ -96,7 +98,7 @@ $light-body: #26374c;
 #shared-navbar .right{
     display: flex;
     width: 14%;
-    width: 210px;
+    width: 180px;
     height: 100%;
     align-items: center;
     justify-content: space-evenly;
@@ -210,11 +212,12 @@ $light-body: #26374c;
 #shared-navbar .center .hero{
     font-size: 48px;
     padding-right: 48px;
+    padding-right: 58px;
     text-align: center;
 }
 #shared-navbar .center span{
     letter-spacing: 6px;
-    padding-right: 35px;
+    padding-right: 48px;
     font-weight: bold;
     font-size: 18px;
 }
@@ -225,6 +228,7 @@ $light-body: #26374c;
     width: 100vw;
     height: 33px;
     background-color: $background-light;
+    background-color: #f2f2f2;
     // background-color: #222222;
     color: black;
     border-bottom: 0.2px solid lightgray;
@@ -242,10 +246,11 @@ $light-body: #26374c;
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
-}
-#shared-navbar .second-nav .left li{
     border: 0.2px solid lightgray;
 }
+// #shared-navbar .second-nav .left li{
+//     border: 0.2px solid lightgray;
+// }
 #shared-navbar .second-nav .left{
     text-align: left;
     // border: 0.2px solid lightgray;

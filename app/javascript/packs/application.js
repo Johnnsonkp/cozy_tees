@@ -27,7 +27,7 @@ window.onload=function(){
           reader.onload = function(file) {
             var img = new Image();
             // console.log(file);
-            $(img).height(300).width(350);
+            $(img).height(400).width(350);
             img.src = file.target.result;
             // console.log(image.size);
 
