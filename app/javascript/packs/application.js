@@ -17,6 +17,15 @@ ActiveStorage.start()
 
 window.onload=function(){
 
+  // for drop down user options (sign in / sign out)
+    const userIcon = document.querySelector('.user-pic');
+    const userBox = document.querySelector('.user-box');
+
+    userIcon.addEventListener('click', () => {
+      userBox.classList.toggle('display-none')
+    })
+
+
     $(function() {
         $('#pictureInput').on('change', function(event) {
           var files = event.target.files;

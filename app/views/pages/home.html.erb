@@ -1,23 +1,37 @@
 <section id="pages-home">
     <header id="showcase">
+        <div class="text">
+            <h3>CozyTees</h3>
+            <p>The two sided marketplace for T-shirt enthusiasts.</p>
+        </div>
+        
+        <form id="form" action="/search">
+            <i class="fas fa-search "></i>
+            <input type="text" id="search" class="search" placeholder="search" name="q">
+            <input  hidden type="submit" class="submit">
+        </form>
     </header>
+        
 
     <div class="about">
-        <h1>About</h1>
+        <span><hr><h1>About</h1><hr></span>
+        
         <p>The history of T-shirt is very interesting. The T-shirt has been a part of clothing since ancient Egypt. A type of modern T-shirt was developed in England in the end of 19th century. The idea of a T-shirt came to the USA during the World War II when American soldiers saw the cotton undershirts of European soldiers. That is a short story of T-shirts origin.</p>
         <%= link_to 'Shop Now', listings_path, method: :get, class:'about-btn'%>
     </div>
 
 <hr class=".style-two">
-    <h1 class="or-header">Or Shop For:</h1>
+    <div class="gender">
+        <span><hr><h1 class="or-header">Shop By Gender</h1><hr></span>
+    </div>
     <div class="container">
         <div class="left">
-            <h1>For Him</h1>
+            <%# <h1>For Him</h1> %>
             <img src='assets/for-him2.png'>
         </div>
 
         <div class="right">
-            <h1>For Her</h1>
+            <%# <h1>For Her</h1> %>
             <img src='assets/for-her2.png'>
         </div>
     </div>

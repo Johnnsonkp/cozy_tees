@@ -132,12 +132,30 @@ $light-body: #26374c;
 #shared-navbar .sign-out{
     font-size: 16px;
     color: black;
+    border: 1px solid red;
 }
-// #shared-navbar #display-none{
-//     // display: none;
-// }
-#shared-navbar .user-box{
+#shared-navbar .nav-sign-in{
+    font-size: 16px;
+    color: white;
+    // border: 1px solid red;
+    width: 100%;
+    background-color: black;
+}
+#shared-navbar .nav-sign-up{
+    font-size: 16px;
+    color: white;
+    // border: 1px solid red;
+    width: 100%;
+    background-color: black;
+}
+#shared-navbar a{
+    text-decoration: none;
+}
+.display-none{
     display: none !important;
+}
+#shared-navbar .user-box{
+    // display: none !important;
     opacity: 1;
     cursor: pointer;
     border: solid 1px $default-color;
@@ -145,7 +163,7 @@ $light-body: #26374c;
     color: black;
     position: absolute;
     top: 8%;
-    top: 17%;
+    top: 9%;
     right: 10%;
     height: 125px;
     width: 200px;
@@ -156,20 +174,14 @@ $light-body: #26374c;
     justify-content: space-evenly;
     text-align: center;
     box-sizing: border-box;
+    z-index: 2;
+    transition: 1s ease-in;
     
 }
-// #shared-navbar .user-box:hover{
-//     display: none;
-// }
-// #shared-navbar .right .user-drop-down:hover{
-//     cursor: pointer;
-//     .user-box{
-//         transition: 1s ease-out;
-//         opacity: 1;
-//         z-index: 1;
-//     }
-// }
-
+#shared-navbar .user-pic{
+    // border: 1px solid red;
+    cursor: pointer;
+}
 .hand-bag{
     background-image: url('hand_bag.png');
     background-repeat: no-repeat;

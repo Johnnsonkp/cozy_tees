@@ -10,6 +10,10 @@ class ListingsController < ApplicationController
   
   end
 
+  def search
+    @listings = Listing.where('title ILIKE ?', '%' + params[:q] + '%')
+  end
+
   # GET /listings/1 or /listings/1.json
   def show
     stripe_session = Stripe::Checkout::Session.create( 

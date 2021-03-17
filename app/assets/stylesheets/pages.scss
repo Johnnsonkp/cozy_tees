@@ -12,7 +12,7 @@ $default-color-dark: #191919;
 // --speed: 1000ms;
 
 #pages-home{
-    min-height: 240vh;
+    min-height: 300vh;
     margin-top: 33px;
     width: 100vw;
     overflow-x: hidden;
@@ -26,19 +26,67 @@ $default-color-dark: #191919;
 #pages-home header{
     width: 100vw;
     height: 560px;
+    // height: 520px;
     background-color: $default-light;
+    position: relative;
 }
 #pages-home #showcase{
-    background-image: url('showcase-1.png');
-    // background-image: url('showcase-3.png');
+    // background-image: url('showcase-1.png');
+    background-image: url('showcase-3.png');
+    // background-image: url('landiing-logo.jpeg');
+    // background-image: url('test.png');
+    // background-image: url('main-img.jpeg');
+    background-blend-mode: darken;
+    background-color: rgba(17, 17, 17, 0.5);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    // filter: blur(6px);
+    //     -webkit-filter: blur(1px);
     // opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // position: relative;
+    // margin-top: 80px;
+    margin-bottom: 120px;
+}
+#pages-home #showcase #form{
+    // border: 1px solid red;
+    width: 50%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+#pages-home #showcase #form input{
+    width: 93%;
+    // border: 1px solid red;
+}
+#form input:focus{
+    outline: none;
+}
+#pages-home #showcase .text{
+    width: 50%;
+    // border: solid 1px red;
+    color: #fff;
+    text-shadow: 2px 2px black;
+    // margin-bottom: 20px;
+    // background-color:rgba(0, 0, 0, 0.75);
+}
+#pages-home #showcase h3{
+    font-size: 55px;
+    font-weight: bolder;
+    color: white;
+}
+#pages-home #showcase p{
+    font-size: 22px;
+    padding-bottom: 20px;
 }
 #pages-home .about{
     font-family: verdana, arial, helvetica, sans-serif;
-    height: 65vh;
+    height: 55vh;
     width: 60%;
     margin: auto;
     text-align: center;
@@ -48,15 +96,36 @@ $default-color-dark: #191919;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 90%;
+    border: 1px solid #111111;
+    background-color: #111111; 
+}
+#pages-home .about hr{
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid #f4f4f4;
+    width: 600px;
+}
+#pages-home .about span{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
 }
 #pages-home .about h1{
     font-family: 'Roboto Slab', serif;
     font-size: 50px;
     margin-bottom: 25px;
+    margin-top:50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    // border: 1px solid red;
 }
 #pages-home .about p{
     font-size: 18px;
     line-height: 30px;
+    width: 60%;
 }
 #pages-home .about-btn{
     margin-top: 30px;
@@ -110,6 +179,39 @@ $default-color-dark: #191919;
     font-size: 30px;
     color: #fff;
     text-align: center;
+}
+#pages-home .about hr{
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid rgba(244, 244, 244,0.2);
+    width: 600px;
+}
+#pages-home .about span{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+#pages-home .gender hr{
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid rgba(244, 244, 244,0.2);
+    width: 420px;
+}
+#pages-home .gender span{
+    display: flex;
+    flex-direction: row;
+    width: 83%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+#pages-home .gender h1{
+    font-size: 35px;
 }
 #pages-home .left h1{
     position: absolute;

@@ -3,10 +3,16 @@
     <div class="container">
 
         <div class="left">
-            <form id="form">
+            <%# <form id="form">
                 <i class="fas fa-search "></i>
                 <input type="text" id="search" class="search" placeholder="search">
-            </form>
+            </form> %>
+
+            <form id="form" action="/search">
+            <i class="fas fa-search "></i>
+            <input type="text" id="search" class="search" placeholder="search" name="q">
+            <input  hidden type="submit" class="submit">
+        </form>
         </div>
 
         <div class="center">
@@ -23,14 +29,14 @@
                 <%# <i class="far fa-user-circle fa-2x user-drop-down"> %>
                 <div class="user-pic user-drop-down">
                 <%# <i class="far fa-user fa-2x user-drop-down"></i> %>
-                    <div id="display-none" class="user-box">
+                    <div id="display-none" class="user-box display-none">
                         <% if user_signed_in?%>
                             <p>Hi <%=current_user.email%></p>
                             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'sign-out'%>
                         <%else%>
                             <p>Login/Sign Up</p>
-                            <%= link_to 'Sign In', new_user_session_path, class:'sign-up' %>
-                            <%= link_to 'Sign Up', new_user_registration_path, class:'sign-in' %>
+                            <%= link_to 'Sign In', new_user_session_path, method: :get, class:'nav-sign-in' %>
+                            <%= link_to 'Sign Up', new_user_registration_path, method: :get, class:'nav-sign-up' %>
                         <%end%>
                     </div>
                     <%# </i> %>

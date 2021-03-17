@@ -1,0 +1,46 @@
+<section id="listings-search">
+
+    <div class="container">
+        <h1> Search Results</h1>
+
+        <div class="listings-wrapper">
+            <% @listings.each do |listing| %>
+            <div class="listing">
+                <%if listing.picture.attached?%>
+                <%# <%=image_tag listing.picture, class:"img"%> 
+                <%= link_to image_tag(listing.picture, class:"img"), listing %>
+                <%else%>
+                <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"img"%>
+                <%end%>
+        
+                <div class="title-price">
+                
+                    <strong><%= listing.title %></strong>
+                    <%# <%= listing.price %>
+                    <div class="price-view-btn">
+                        <p>
+                        <%if current_user && listing.purchased == false%>
+                            <button data-stripe='payment' data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> Buy: $<%=listing.price%></button>
+                        <%elsif listing.purchased == true%>
+                            <button class="btn" disabled>SOLD</button>
+                        <%else%>
+                            <%= button_to "Login to buy ", new_user_session_path, class:"btn"%>
+                        <%end%>
+                        </p>
+                        <%# <p><button class="btn">View More</button></p> %>
+                        <p><button class="btn view-more-btn"><%= link_to "View More", listing%></button></p>
+                    </div>
+                </div>
+                
+            </div>
+            <%end%>
+
+        </div>
+      
+    </div>
+        
+    </div>
+
+
+
+</section>
