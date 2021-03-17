@@ -16,7 +16,6 @@ $default-color-dark: #191919;
     margin-top: 33px;
     width: 100vw;
     overflow-x: hidden;
-    background-color: #0d1117;
     background-color: #191919;
     // border: 1px solid red;
 }
@@ -97,8 +96,9 @@ $default-color-dark: #191919;
     align-items: center;
     justify-content: center;
     width: 90%;
-    border: 1px solid #111111;
+    border: 1px solid transparent;
     background-color: #111111; 
+    box-shadow: 5px 10px;
 }
 #pages-home .about hr{
     display: flex;

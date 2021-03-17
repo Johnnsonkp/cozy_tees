@@ -228,7 +228,7 @@ $light-body: #26374c;
     text-align: center;
 }
 #shared-navbar .center span{
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     padding-right: 48px;
     font-weight: bold;
     font-size: 18px;
@@ -246,6 +246,9 @@ $light-body: #26374c;
     border-bottom: 0.2px solid lightgray;
     // margin-bottom: 20px;
 }
+// #shared-navbar .second-nav .container{
+//     width: 48%;
+// }
 #shared-navbar .second-nav ul{
     list-style: none;
 }

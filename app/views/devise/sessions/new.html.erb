@@ -1,5 +1,5 @@
 <section id="devise-new">
-  <%# <h2>Account</h2> %>
+  <h2 class="account">Account</h2>
   <div class="container">
     <%# <h2>Log in</h2> %>
     <%# <h2>Account</h2> %>
@@ -8,7 +8,14 @@
       <div class="left-sign-up">
         <h4>New here?</h4>
         <p>Registration is free and easy!</p>
-        <%= link_to "CREATE AN ACCOUNT", new_user_registration_path, method: :get%>
+        <p><%= image_tag "tick.png", class:'tick' %>Create multiple listings</p>
+        <p><%= image_tag "tick.png", class:'tick' %>Buy and sell multiple listings</p>
+        <p><%= image_tag "tick.png", class:'tick' %>Edit own listings</p>
+
+        <div class="btn-div">
+          <%= link_to "CREATE AN ACCOUNT", new_user_registration_path, method: :get, class:'create-btn'%>
+        </div>
+        
       </div>
 
       <div class="right-sign-in">
@@ -36,18 +43,15 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "Log in" %>
+            <%= f.submit "SIGN IN" %>
           </div>
+          <%= render "devise/shared/links" %>
         <% end %>
 
 
       </div>
     </div>
   </div>
-
-
-    <%= render "devise/shared/links" %>
-
 
 
 </section>

@@ -67,7 +67,11 @@ window.onload=function(){
     const bag = document.querySelector('.bag-select')
     const nav = document.getElementById('shared-navbar')
     const heroText = document.querySelector('.hero')
-    const homePage= document.getElementById('pages-home')
+    const heroSecondary = document.querySelector('.span')
+    // const homePage= document.getElementById('pages-home')
+    const pagesHome = document.getElementById('pages-home')
+    const about = document.querySelector('.about')
+    
 
     dayNightBtn.addEventListener('click', () =>{
         // window.location.reload()
@@ -83,9 +87,17 @@ window.onload=function(){
             bag.classList.add('black-hand-bag')
             
 
-            nav.style.backgroundColor = 'white';
+            about.style.backgroundColor = '#FFF';
+            about.style.color = 'black';
+
+            nav.style.backgroundColor = '#FFF';
             // homePage.style.backgroundColor = '#fff';
             heroText.style.color = "black";
+            heroSecondary.style.color = "black";
+            pagesHome.style.backgroundColor = '#f5f7fa';
+            // pagesHome.style.color = "#111111";
+
+            
         }
 
         // for light mode styling
@@ -99,8 +111,15 @@ window.onload=function(){
             bag.classList.remove('black-hand-bag')
             bag.classList.add('hand-bag')
 
-            nav.style.backgroundColor = '#2f2f2f';
+
+            about.style.backgroundColor = '#111111';
+            about.style.color = '#FFF';
+            nav.style.backgroundColor = '#191919';
+            pagesHome.style.backgroundColor = '#191919';
+            // pagesHome.style.color = "#fff";
             heroText.style.color = "white";
+            heroSecondary.style.color = "white";
+            // body.style.color = "white";
             // homePage.style.backgroundColor = '#2f2f2f';
         }
     })  

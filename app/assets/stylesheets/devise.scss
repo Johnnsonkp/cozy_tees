@@ -5,6 +5,12 @@
     display: flex;
     flex-direction: column;
 }
+.account{
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    font-size: 45px;
+}
 
 #devise-new .container{
     padding-top: 34px;
@@ -12,7 +18,7 @@
     margin: auto;
     // display: flex;
     // flex-direction: row;
-    border-top: 2px solid black;
+    // border-top: 2px solid black;
     // border: 1px solid red;
 }
 #devise-new .content-wrapper{
@@ -21,14 +27,52 @@
     display: flex;
     justify-content: space-between;
 }
+.tick{
+    height: 10px;
+    padding-right: 10px;
+}
 #devise-new .left-sign-up{
     border: 1px solid red;
+    border-top: 3px solid black;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     width: 45%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
 }
+#devise-new .left-sign-up h4{
+    padding-bottom: 20px;
+}
+#devise-new .left-sign-up p{
+    line-height: 25px;
+}
+#devise-new .left-sign-up p:nth-of-type(1){
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+#devise-new .left-sign-up .btn-div{
+    margin-top: 30px;
+}
+#devise-new .left-sign-up a{
+    text-decoration: none;
+    color: #fff;
+    background-color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+// #devise-new .left-sign-up .create-btn{
+//     margin-top: 60px !important;
+//     border: 1px solid red;
+// }
 #devise-new .right-sign-in{
     // border: 1px solid red;
-    border-top: 2px solid black;
+    border-top: 3px solid black;
     border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     width: 45%;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -44,7 +88,7 @@
 #devise-new .right-sign-in input{
     width: 95%;
     height: 30px;
-    border: 1px solid lightgray;
+    // border: 1px solid lightgray;
     background-color: #fff;
     padding: 5px;
 }
@@ -77,11 +121,87 @@
 }
 .right-sign-in .actions{
     width: 110px;
-    background-color: black;
-    color: #fff;
-    border: 1px solid red;
+    // width: 100%;
+    background-color: black !important;
+    // color: #fff;
+    // border: 1px solid red;
 }
-.right-sign-in .actions a{
-    background-color: black;
+.right-sign-in .actions input{
+    background-color: black !important;
     color: #fff;
+    // width: 110px;
+    cursor: pointer;
+}
+
+
+////////////////////// Registration New //////////////////////////////////////////////////@at-root
+#registration-new{
+    min-height: 100vh;
+    width: 100vw;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+#registration-new .container{
+    // padding-top: 34px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#registration-new .left{
+    border: 1px solid red;
+    border-top: 3px solid black;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    width: 45%;
+    // padding-top: 25px;
+    // padding-bottom: 25px;
+    // padding-left: 25px;
+    padding-right: 0;
+}
+#registration-new .left .img{
+    width: 100%;
+    height: 415px;
+    border: 3px solid black;
+}
+
+#registration-new .right{
+    // border: 1px solid red;
+    border-top: 3px solid black;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    width: 45%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+}
+
+
+#registration-new .right h4{
+    margin-bottom: 15px;
+}
+#registration-new .right label{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+#registration-new .right input{
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 95%;
+    height: 30px;
+}
+
+#registration-new .actions {
+    width: 110px;
+    background-color: black !important;
+}
+#registration-new  .actions input{
+    background-color: black !important;
+    color: #fff;
+    // width: 110px;
+    cursor: pointer;
 }
