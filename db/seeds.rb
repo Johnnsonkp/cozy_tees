@@ -24,8 +24,4 @@ if Feature.count == 0
     end
 end
 
-# Make sure to remove before deployment
-if User.count == 0
-    User.create(email: 'john@test.com', password: 'password1', password_confirmation: 'password1')
-end
 
