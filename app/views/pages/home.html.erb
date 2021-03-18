@@ -10,6 +10,8 @@
             <input type="text" id="search" class="search" placeholder="search" name="q">
             <input  hidden type="submit" class="submit">
         </form>
+
+        <img class="down-arrow down" src="assets/white-arrow.png">
     </header>
         
 
@@ -24,17 +26,37 @@
     <div class="gender">
         <span><hr><h1 class="or-header">Shop By Gender</h1><hr></span>
     </div>
-    <div class="container">
-        <div class="left">
+    <%# <div class="container">
+        <div class="left"> %>
             <%# <h1>For Him</h1> %>
             <%# <div class="wrapper"> %>
-                <img src='assets/for-him2.png'>
+                <%# <img src='assets/for-him2.png'> %>
             <%# </div> %>
-        </div>
+        <%# </div> %>
 
-        <div class="right">
+        <%# <div class="right"> %>
             <%# <h1>For Her</h1> %>
-            <img src='assets/for-her2.png'>
+            <%# <img src='assets/for-her2.png'>
+        </div> %>
+        <div class="wrapper">
+            <div class="left">
+                <img src='assets/for-him2.png'>
+                <div class="text">
+                    <h1>For Him</h1>
+                    <p>Camis or crops, bandeaus or bralets, we've got all the trend-setting tops so you can stay statement in separates this season. </p>
+                    <%= button_to "SHOP NOW", listings_path, method: :get, class:'btn' %>
+                </div>
+            </div>
+
+            <div class="right">
+                <img src='assets/for-her2.png'>
+                <div class="text">
+                    <h1>For Her</h1>
+                    <p>Camis or crops, bandeaus or bralets, we've got all the trend-setting tops so you can stay statement in separates this season. </p>
+                    <%= button_to "SHOP NOW", listings_path, method: :get, class:'btn' %>
+                </div>
+            </div>
+        
         </div>
     </div>
 

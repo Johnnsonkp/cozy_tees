@@ -6,37 +6,24 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
-    @listings = Listing.all
-  
+    # @listings = Listing.all
+    @categories = Category.all
+
+    @q = Listing.all.ransack(params[:q])
+    @listings = @q.result
+
   end
 
   def search
-    @listings = Listing.where('title ILIKE ?', '%' + params[:q] + '%')
+    if params[:q].blank?
+      redirect_to(root_path, alert: "Empty field") and return
+    else
+      @listings = Listing.where('title ILIKE ?', '%' + params[:q] + '%')
+    end
   end
 
   # GET /listings/1 or /listings/1.json
   def show
-    stripe_session = Stripe::Checkout::Session.create( 
-      payment_method_types: ['card'], 
-      client_reference_id: current_user ? current_user.id : nil, 
-      customer_email: current_user ? current_user.email : nil, 
-      line_items: [{ 
-        amount: @listing.price * 100, 
-        name: @listing.title, 
-        description: @listing.description, 
-        currency: 'aud', 
-        quantity:1 
-      }], 
-      payment_intent_data: { 
-        metadata: { 
-          listing_id: @listing.id, 
-          user_id: current_user ? current_user.id : nil 
-        } 
-      }, 
-      success_url: "#{root_url}payments/success?listingId=#{@listing.id}", 
-      cancel_url: "#{root_url}listings" 
-    ) 
-    @session_id = stripe_session.id 
     # pp stripe_session
   end
 

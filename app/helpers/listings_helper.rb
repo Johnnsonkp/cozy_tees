@@ -7,4 +7,10 @@ module ListingsHelper
     #         input = 'ky-jersey.jpg'
     #     end
     # end 
+
+    def each_category(input)
+        input.each do |cat|
+            cat.name
+        end
+    end
 end

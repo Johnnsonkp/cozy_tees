@@ -123,4 +123,15 @@ window.onload=function(){
             // homePage.style.backgroundColor = '#2f2f2f';
         }
     })  
+
+    // Landing page Down arrow
+    const downArrow = document.querySelector('.down')
+
+    downArrow.addEventListener('click', () => {
+        if (document.body.scrollTop < 100) {
+            window.scrollBy(0, 750);
+        }else{
+        return "nothing"
+        }
+    })
 }

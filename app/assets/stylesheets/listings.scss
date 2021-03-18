@@ -7,19 +7,10 @@
     width: 30%;
     height: 500px;
 }
-// #target{
-//     width: 30% !important;
-//     overflow: hidden;
-// }
-// .small {
-//     width: 156px !important;
-//     height: auto !important;
-// }
-
 #listings-forms{
     // padding-top: 50px;
     margin-top: 34px;
-    min-height: 120vh;
+    min-height: 140vh;
     width: 100vw;
     background-color: #191919;
     color: #fff;
@@ -224,11 +215,19 @@ div.field.features{
 
 // Listings-index 
 #listings-index{
-    min-height: 120vh;
+    min-height: 140vh;
     width: 100vw;
     background-color: #191919; 
     margin-top: 34px;
+    padding-bottom: 150px;
     color: #fff;
+}
+.div-container hr{
+    width: 100%;
+    background-color: rgba(255, 255, 255,0.2);
+    margin-top: 60px;
+    margin-bottom: 0;
+    height: 0.1px;
 }
 #listings-index a{
     text-decoration: none;
@@ -246,26 +245,49 @@ div.field.features{
     opacity: 0.8;
 }
 #listings-index .container{
-    padding-top: 100px;
+    padding-top: 70px;
     width: 90%;
     margin: auto;
     // overflow: hidden;
     display: flex;
     // border: 1px solid red;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 #listings-index .side-search{
-    margin-top: 15px;
-    width: 450px;
-    height: 122vh;
-    background-color: lightgray;
+    margin-top: 25px;
+    width: 230px;
+    height: 300px;
+    background-color: #f2f2f2;
     padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: black;
+    
     // border: 1px solid red;
+    position: absolute;
+    top: 66.7%;
+    left: 6%;
+}
+#listings-index .side-search h3{
+    // border: 1px solid black;
+    width: 100%;
+    // margin: auto;
+    // padding-left: 40px;
+    // padding-right: 20px;
+}
+#listings-index .side-search .wrapper{
+    width: 97%;
+    margin: auto;
+
 }
 #listings-index .listings-wrapper{
+    position: relative;
+    width: 90%;
+    margin-left: 16%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: flex-end;
     // border: 1px solid red;
 }
 #listings-index .listing{
@@ -275,14 +297,18 @@ div.field.features{
     padding-bottom: 15px;
 }
 #listings-index .title-price{
-    height: 100px;
+    min-height: 130px;
     width: 300px;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
     color: black;
     padding: 15px;
+    border-top: 3px solid black;
     box-sizing: border-box;
+}
+#listings-index .listing-user{
+    padding-top: 5px;
 }
 #listings-index .showcase{
     height: 220px;
@@ -292,6 +318,8 @@ div.field.features{
     background-color: rgba(255,255,255,0.5);
     background-blend-mode: darken;
     background-color: rgba(17, 17, 17, 0.5);
+    background-blend-mode: lighten;
+    background-color: rgba(255,255,255,0.5);
 }
 .price-view-btn {
     display: flex;
@@ -480,7 +508,7 @@ hr {
     margin-bottom: 10px;
 }
 #listings-search .title-price{
-    height: 100px;
+    min-height: 120px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -494,6 +522,9 @@ hr {
     margin: 0;
     padding: 0;
     // box-sizing: border-box;
+}
+#listings-search .listing-user{
+    padding-top: 10px;
 }
 .img{
     width: 100%;

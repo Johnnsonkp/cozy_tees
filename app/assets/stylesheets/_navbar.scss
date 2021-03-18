@@ -132,7 +132,12 @@ $light-body: #26374c;
 #shared-navbar .sign-out{
     font-size: 16px;
     color: black;
-    border: 1px solid red;
+    // border: 1px solid red;
+    font-size: 16px;
+    color: white;
+    // border: 1px solid red;
+    width: 100%;
+    background-color: black;
 }
 #shared-navbar .nav-sign-in{
     font-size: 16px;

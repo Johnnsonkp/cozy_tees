@@ -1,1 +1,2 @@
 json.array! @listings, partial: "listings/listing", as: :listing
+json.extract! listing, :id, :title, :price, :sex, :color, :brand, :description, :category_id, :condition, :size, :created_at, :updated_at
