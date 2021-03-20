@@ -66,6 +66,16 @@ The purpose of this marketplace is to cater for buyers who are wanting to purcha
 
 **_Screenshots_**
 
+<img src="app/assets/images/cozy-landing.png">
+<br>
+<img src="app/assets/images/cozy-about.png">
+<br>
+<img src="app/assets/images/cozy-gender.png">
+<br>
+<img src="app/assets/images/cozy-listings.png">
+<br>
+<img src="app/assets/images/cozy-listing.png">
+
 <br>
 <br>
 
@@ -90,6 +100,21 @@ The purpose of this marketplace is to cater for buyers who are wanting to purcha
 
 ### [R12] User Stories
 <hr>
+
+- As Gerrard, I should be able to see all the T-Shirt listings without logging in.
+- As Steve, I would like to see the listing owner’s username on each listing.
+- As Nicole, I would like to log into my existing account.
+- As Nathan, I should be able to see the detailed information of a listing without logging in.
+- As Lilly, I would like a secure way to make a paytment.
+- As Oliva, I would like a quick and easy way to sort through the listing.
+- As Henderson, I would like to browse the website on my mobile, computer and even my tablet.
+- As Tom, I would like to upload a picture for my user listing.
+- As Ana, I don't want to be seeing listings without pictures, titles or prices.
+- As Richard, I would like the website to handle the payment function, so that I do not have to provide my account details to others.
+- As Nina, I would like to create, update and even delete a listings.
+- As George, I would like the ability to edit my own listing only and not someone elses.
+
+
 
 <br>
 <br>
@@ -302,9 +327,43 @@ Zero or One
 ### [R19] Database schema design
 <hr>
 
+CozyTees uses PostgreSQL as the database and the data is stored in columns and rows of several tables. The relationship between tables and field types is called a schema. The complete schema code can be found here <a href="https://github.com/Johnnsonkp/cozy_tees/blob/master/db/schema.rb">schema.rb.</a>
+
+The ERD diagram for the above schema can be found <a href="https://github.com/Johnnsonkp/cozy_tees/blob/master/app/assets/images/ERD.png">here.</a> 
+
+To briefly touch on cozytees database schema design.
+
+- Tables 'users' and 'listings' are the two major tables of the database. The rest of the tables are linked to at least one of them.
+
+The only details collected or kept on the user tables are the users email and encrypted passwords as these were the only details needed for a user to sign in and be able to list as item for sale or buy one. User authentication was implemented in listing controller and views to separate their actions (1. Edit, Delete and Purchase a listing).
+
+- Tables 'active_storage_attachments' and 'active_storage_blobs' are automatically created when installing active storage.
+
+we can see which image belong to which Listing. 'Active_storage_blobs' is only connected to 'active_storage_attachments' and is used to store metadata of the images.
+
+- Table 'order' is linked to 'users' and 'listings' and is used to store important and non-sensitive payment data (sensitive payment data like credit card details are handled by Stripe).
+
 
 <br>
 <br>
 
 ### [R20] Trello Board
 <hr>
+
+<img src="app/assets/images/trello-1.png">
+<img src="app/assets/images/trello-1.png">
+<img src="app/assets/images/trello-1.png">
+<img src="app/assets/images/trello-1.png">
+
+
+<br>
+<br>
+
+
+**_Future Imporvements_**
+
+- Create personal user profile with pictures for each user seperate to the devise user table.
+- Improve website styling
+- Add 3rd party services: Mailgun - transaction email 
+- Create a review section for each listing
+- Create a like or favorites feature.
