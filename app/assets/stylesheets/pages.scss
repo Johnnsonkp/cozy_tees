@@ -33,6 +33,7 @@ $default-color-dark: #191919;
 #pages-home #showcase{
     // background-image: url('showcase-1.png');
     background-image: url('showcase-3.png');
+    // background-image: url('showcase-2.png');
     // background-image: url('landiing-logo.jpeg');
     // background-image: url('test.png');
     // background-image: url('main-img.jpeg');
@@ -51,6 +52,7 @@ $default-color-dark: #191919;
     // position: relative;
     // margin-top: 80px;
     margin-bottom: 120px;
+    
 }
 #pages-home #showcase #form{
     // border: 1px solid red;
@@ -73,7 +75,14 @@ $default-color-dark: #191919;
     color: #fff;
     text-shadow: 2px 2px black;
     // margin-bottom: 20px;
-    // background-color:rgba(0, 0, 0, 0.75);
+    // background-color:rgba(0, 0, 0, 0.4);
+    // // border: 1px solid red;
+    // padding-left: 4px;
+    // padding-right:4px;
+    // padding-bottom: 5px;
+    // padding-top: 5px;
+
+
 }
 #pages-home #showcase h3{
     font-size: 55px;

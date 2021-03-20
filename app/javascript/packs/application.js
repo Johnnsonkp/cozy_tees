@@ -51,7 +51,7 @@ window.onload=function(){
       });
 
 
-    const allLinks = document.querySelectorAll('a')
+    // const allLinks = document.querySelectorAll('a')
     // To refresh the javascript on the page each time a link is clicked 
     // allLinks.forEach((link) => {
     //     link.addEventListener('click', () =>{
@@ -133,5 +133,5 @@ window.onload=function(){
         }else{
         return "nothing"
         }
-    })
+    });
 }

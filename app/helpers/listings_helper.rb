@@ -8,9 +8,14 @@ module ListingsHelper
     #     end
     # end 
 
+    def cents_to_dollars(input)
+        number_with_precision input/100, precision: 2
+    end
+    
     def each_category(input)
         input.each do |cat|
             cat.name
         end
     end
+
 end

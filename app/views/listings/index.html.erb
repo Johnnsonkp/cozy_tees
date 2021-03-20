@@ -32,11 +32,9 @@
           <% end %>
           <br>
           <br>
-        
-<%# condition, :size, feature_ids: %>
-          
-        <% end %>
 
+        <% end %>
+        <%= button_to "Create Listing", new_listing_path, method: :get, class:'btn'%>
       </div>
 
     </div>
@@ -59,7 +57,7 @@
               <div class="price-view-btn">
                 <p>
                   <%if current_user && listing.purchased == false%>
-                      <button data-path=<%=new_stripe_session_path%> data-listing-id=<%=listing.id%> data-stripe='payment' data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> Buy: $<%=listing.price%></button>
+                      <button data-path=<%=new_stripe_session_path%> data-listing-id=<%=listing.id%> data-stripe='payment' data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> $<%=cents_to_dollars(listing.price)%></button>
                   <%elsif listing.purchased == true%>
                       <button class="btn" disabled>SOLD</button>
                   <%else%>

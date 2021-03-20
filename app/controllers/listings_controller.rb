@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_user_listing, only: [:update, :edit, :destroy]
   before_action :set_form_variables, only: [:new, :edit]
+  before_action :validate_presence, only: [:create]
 
   # GET /listings or /listings.json
   def index
@@ -74,6 +75,9 @@ class ListingsController < ApplicationController
   end
 
   private
+
+    
+
     def set_user_listing
       @listing = current_user.listings.find_by_id(params[:id])
       if @listing == nil
@@ -92,6 +96,22 @@ class ListingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
+    end
+
+
+    def check_presence
+      params[:listing][:title].present? && params[:listing][:price].present? && params[:listing][:picture].present?
+    end
+    
+    def validate_presence
+      if !check_presence
+        # render json: { error: {
+        #     message: "Bad Request, parameters missing.",
+        #     status: 500 }
+        # }
+        flash[:alert] = "Bad Request, parameters missing."
+        redirect_to new_listing_path
+      end
     end
 
     # Only allow a list of trusted parameters through.

@@ -6,7 +6,7 @@ Cozy tees is a two-sided-marketplace application on rails that facilites the buy
 <hr>
 
 ### Links
-- [R9] Live Website: 
+- [R9] Live Website: https://cozy-tees-app.herokuapp.com/
 - [R10] Github Repo: https://github.com/Johnnsonkp/cozy_tees 
 
 <hr>
@@ -136,3 +136,175 @@ Wireframe mocks ups with Adobe XD
 <hr>
 
 <img src="app/assets/images/ERD.png">
+
+
+<br>
+<br>
+
+### [R15] High-level components
+<hr>
+
+Ruby on Rails follows the rule of convention over concern, the MVC design pattern is used to enforce this rule. The design principle, 'separation of concerns' is followed, so each component (model, view and controller) should only handle a specific set of actions for an application.
+
+- Models: The model deals with the data storage in the app. Active records in the model layer is resposonsible for creating and maintaining persistent data required for an application by interacting with the database. <br> The convention over concern rule is applied in the models on rails, as we are not required to write in the language of the database, instead we write in ruby code and the model is able to inteprate this and interact with the database.
+
+- View: The view of this app contains the content displyed on the webpage to the user. The view contains code that is rendered to the browser for the user to see. In a typical rails app as is the case with this app - we want to keep the logic to a minimum on the views pages, we rely on helpers and controllers to house most of the logic.
+
+- Controllers: Controller is the glue that connects our models and views together and is also the place we store our business logic of our Rails app. We usually declare instance variables in our controllers and use them in our views to display information to users or use them in models to create certain methods. Our controllers communicate with both our view and model components.
+
+
+<br>
+<br>
+
+### [R16] Third-party Services
+<hr>
+
+There are several third party services used in this application to streamline the development and deployment process.
+
+**_Ruby/Rails gems_**
+
+- [01] Stripe (https://rubygems.org/gems/stripe/versions/1.57.1): Stripe is the easiest way to accept payments online. See https://stripe.com for details.
+- Ultrahook (https://rubygems.org/gems/ultrahook): Ultrahook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoint (provided by the ultrahook.com service) to private endpoints accessible from your computer. 
+- Aws-sdk-s3 (https://rubygems.org/gems/aws-sdk-s3/versions/1.0.0.rc2): Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby. 
+- Devise (https://rubygems.org/gems/devise): Devise is a flexible authentication solution for Rails based on Warden.
+- Ransack (https://rubygems.org/gems/ransack): Ransack enables the creation of both simple and advanced search forms for your Ruby on Rails application. 
+
+<br>
+<br>
+
+**_Third-party Platforms_**
+
+- [R6] Heroku
+
+This application is deployed on Heroku which is a ckoud based platform as a service that supports several programming languages. The platform manages server configuration, network managemnt, database versioning and DNS management.
+
+Heroku runs the application inside a dyno by packaging all the source code of this application and all the dependencies. Dynos also provide the capability of scaling up this application in the future.
+
+Heroku offers several ways of deploying your code onto thier platform. I chose to use the most simplest method which is to pushing the code from a git repository to a Heroku app.
+
+
+- [O1] Stripe
+
+Stripe is software as a service online payment processing platform. It is a very powerful and flexible tool for e-commerce. It provides various payment options such as one off payments or reacuring payments. Cozytees uses stripe as a secure way to process one-off payments. 
+
+When a user decides on purchasing an item and clicks on the buy button, they are redirected to stripe to enter their card details to finalise the purchase. A receipt confirmation is sent back with thier payment details.
+
+The Stripe payment processing also incorporates Webhooks. Once a payment is processed, Stripe uses webhooks to notify CozyTees that an event happens in CozyTees account.
+
+- [R5] AWS - S3
+
+Amazon S3 is a cloud hosting service for uploaded images. Cozytees uses AWS S3 Bucket to host images for the listings instead of storing files locally. This provides the potential for better scalability in the future as images are not stored localy on the app but on the cloud service.
+
+<br>
+<br>
+
+### [R17] Model relationships
+<hr>
+
+The 6 models that exist on this app are as follows:
+<br>
+<br>
+
+**_User Model - Storing user information_**
+```
+has_many :listings
+```
+
+- The relationship between the users and listings is the 'has many' relationship, meaning each user can have multiple listings.
+<br>
+
+
+**_Listing Model - Stored details of each listing_**
+
+```
+belongs_to :user
+  belongs_to :category
+  has_many :listing_features, dependent: :destroy
+  has_many :features, through: :listing_features
+  accepts_nested_attributes_for :listing_features
+  has_one_attached :picture
+```
+- Each listing can only belong to one category.
+- Each listing has a 'has many' relationship to features and to the joining table listing features. 
+- Each listing has only one picture. 
+- each listing as accepts a nested attributes fromt the listing features table.
+<br>
+
+
+**_Feature Model - Stores all the feature options_**
+
+
+```
+has_many :listing_features
+has_many :listings, through: :listing_features
+```
+- Each feature has a 'has many' relationship to the listing features model.
+- Each feature has a 'has many' relationship to listings, meaning each feature can belong to multiple listings through the listing features model.
+
+<br>
+
+**_Category Model - Stores all the category options_**
+
+```
+has_many :listings
+```
+- Each category can belong to multple listings
+
+<br>
+
+
+**_Order Model - Stores all the feature options_**
+
+```
+belongs_to :user
+belongs_to :listing
+```
+- Purchases belong to (1) users and 1 listings.
+- purchases table only store non-sensitive payment data like user id, listing id and purchase id (from Stripe).
+
+<br>
+
+
+**_Listing features Model - Stores all the feature options_**
+
+```
+belongs_to :listing
+belongs_to :feature
+```
+- Lisiting features belong to listing and feature.
+
+
+
+<br>
+<br>
+
+### [R18] Database relations
+<hr>
+
+This app uses PostgreSQL database for the persistant storage of data. Among all the tables this app utilises serveral types of relations: one and only one, plymorphic, zero or many, zero or one, many.
+
+One and Only One
+
+- 'order to listings', 'order to users', 'listings to category', 'listings to users' ‘active storage attachment to active storage blobs’ are 'one and only one' relations. In other words, the former table belongs to the later table and the former tables hold the foreign keys to the later ones.
+
+Zero or Many
+
+- 'users to listings', 'listings to features' are 'zero or many' relations, as the former can either have 0 or many of the latter.
+
+Zero or One
+
+- 'listings to order' is a 'zero or one' relation. One listing can only be purchased once.
+
+
+<br>
+<br>
+
+### [R19] Database schema design
+<hr>
+
+
+<br>
+<br>
+
+### [R20] Trello Board
+<hr>

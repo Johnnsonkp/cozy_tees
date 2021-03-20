@@ -67,7 +67,7 @@
           <div class="field features">
             <h4>Features</h4>
             <div class="features-content">
-              <%= form.collection_check_boxes :feature_ids, features, :id, :name %>
+              <%= form.collection_check_boxes :feature_ids, features, :id, :name, include_hidden: false %>
             </div>
           </div>
 
