@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :set_listing, only: %i[ show edit update destroy]
   before_action :set_user_listing, only: [:update, :edit, :destroy]
   before_action :set_form_variables, only: [:new, :edit]
   before_action :validate_presence, only: [:create]
@@ -21,6 +21,20 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.where('title ILIKE ?', '%' + params[:q] + '%')
     end
+  end
+
+  def him
+    @listings = Listing.all
+
+    @q = Listing.all.ransack(params[:q])
+    @listings = @q.result
+  end
+
+  def her
+    @listings = Listing.all
+
+    @q = Listing.all.ransack(params[:q])
+    @listings = @q.result
   end
 
   # GET /listings/1 or /listings/1.json

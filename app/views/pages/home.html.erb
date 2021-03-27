@@ -2,7 +2,7 @@
     <header id="showcase">
         <div class="text">
             <h3>CozyTees</h3>
-            <p>A two sided marketplace application for T-shirt enthusiasts.</p>
+            <p>A two sided marketplace for T-shirt enthusiasts.</p>
         </div>
         
        
@@ -28,25 +28,13 @@
     <div class="gender">
         <span><hr><h1 class="or-header">Shop By Gender</h1><hr></span>
     </div>
-    <%# <div class="container">
-        <div class="left"> %>
-            <%# <h1>For Him</h1> %>
-            <%# <div class="wrapper"> %>
-                <%# <img src='assets/for-him2.png'> %>
-            <%# </div> %>
-        <%# </div> %>
-
-        <%# <div class="right"> %>
-            <%# <h1>For Her</h1> %>
-            <%# <img src='assets/for-her2.png'>
-        </div> %>
         <div class="wrapper">
             <div class="left">
                 <img src='assets/for-him2.png'>
                 <div class="text">
                     <h1>For Him</h1>
                     <p>Camis or crops, bandeaus or bralets, we've got all the trend-setting tops so you can stay statement in separates this season. </p>
-                    <%= button_to "SHOP NOW", listings_path, method: :get, class:'btn' %>
+                    <%= button_to "SHOP NOW", him_path, method: :get, class:'btn' %>
                 </div>
             </div>
 
@@ -55,7 +43,7 @@
                 <div class="text">
                     <h1>For Her</h1>
                     <p>Camis or crops, bandeaus or bralets, we've got all the trend-setting tops so you can stay statement in separates this season. </p>
-                    <%= button_to "SHOP NOW", listings_path, method: :get, class:'btn' %>
+                    <%= button_to "SHOP NOW", her_path, method: :get, class:'btn' %>
                 </div>
             </div>
         

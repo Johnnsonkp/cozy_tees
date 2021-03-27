@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'payments/webhook', to: 'payments#webhook'
   get 'payments/success', to: 'pages#payment_success'
   get 'search', to: "listings#search"
+  get 'him', to: "listings#him"
+  get 'her', to: "listings#her"
   post 'payments/session', to: 'payments#create_stripe_session', as: 'new_stripe_session'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

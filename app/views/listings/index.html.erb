@@ -38,6 +38,7 @@
       </div>
 
     </div>
+    <%# <hr class="seperator"> %>
 
     <div class="listings-wrapper">
       <% @listings.each do |listing| %>
@@ -61,7 +62,7 @@
                   <%elsif listing.purchased == true%>
                       <button class="btn" disabled>SOLD</button>
                   <%else%>
-                      <%= button_to "Login to buy ", new_user_session_path, class:"btn"%>
+                      <%= button_to "Login to Buy", new_user_session_path, class:"btn"%>
                   <%end%>
                 </p>
                 <%# <p><button class="btn">View More</button></p> %>

@@ -26,36 +26,24 @@ $default-color-dark: #191919;
 #pages-home header{
     width: 100vw;
     height: 560px;
-    // height: 520px;
     background-color: $default-light;
     position: relative;
 }
 #pages-home #showcase{
-    // background-image: url('showcase-1.png');
     background-image: url('showcase-3.png');
-    // background-image: url('showcase-2.png');
-    // background-image: url('landiing-logo.jpeg');
-    // background-image: url('test.png');
-    // background-image: url('main-img.jpeg');
     background-blend-mode: darken;
     background-color: rgba(17, 17, 17, 0.5);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    // filter: blur(6px);
-    //     -webkit-filter: blur(1px);
-    // opacity: 0.5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // position: relative;
-    // margin-top: 80px;
     margin-bottom: 120px;
     
 }
 #pages-home #showcase #form{
-    // border: 1px solid red;
     width: 50%;
     height: 45px;
     display: flex;
@@ -64,34 +52,27 @@ $default-color-dark: #191919;
 }
 #pages-home #showcase #form input{
     width: 93%;
-    // border: 1px solid red;
 }
 #form input:focus{
     outline: none;
 }
 #pages-home #showcase .text{
     width: 50%;
-    // border: solid 1px red;
     color: #fff;
     text-shadow: 2px 2px black;
-    // margin-bottom: 20px;
-    // background-color:rgba(0, 0, 0, 0.4);
-    // // border: 1px solid red;
-    // padding-left: 4px;
-    // padding-right:4px;
-    // padding-bottom: 5px;
-    // padding-top: 5px;
 
 
 }
 #pages-home #showcase h3{
-    font-size: 55px;
+    font-size: 58px;
     font-weight: bolder;
     color: white;
+    text-shadow: 5px 6px black;
 }
 #pages-home #showcase p{
     font-size: 22px;
     padding-bottom: 20px;
+    font-weight: thin;
 }
 @keyframes downarrow {
     0% { -webkit-transform: translateY(0); opacity: 0.4 }
@@ -121,7 +102,6 @@ $default-color-dark: #191919;
     margin: auto;
     text-align: center;
     color: #f4f4f4;
-    // border: solid 1px red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,7 +142,6 @@ $default-color-dark: #191919;
     margin-top: 30px;
     border: 1px solid $default-light;
     background-color: $default-light;
-    // height: 50px;
     width: 150px;
     color: black;
     font-size: 18px;
@@ -179,16 +158,13 @@ $default-color-dark: #191919;
     margin-bottom: 20px;
 }
 #pages-home .container{
-    // border: 1px solid red;
     padding-top: 70px;
     width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
-    // overflow-x: hidden;
     justify-content: space-evenly;
     align-content: center;
-    // justify-content: space-around;
 }
 
 #pages-home .center-center button{
@@ -198,12 +174,6 @@ $default-color-dark: #191919;
     z-index: 2;
     cursor: pointer;
 }
-// #pages-home .left{
-//     // border: 1px solid red;
-//     // flex: 1;
-//     padding-right: 15px;
-//     align-self: center;
-// }
 .or-header{
     margin-top: 30px;
     margin-bottom: 0px;
@@ -244,81 +214,26 @@ $default-color-dark: #191919;
 #pages-home .gender h1{
     font-size: 35px;
 }
-// #pages-home .left h1{
-//     position: absolute;
-//     top: 1350px;
-//     left: 11%;
-//     font-size: 50px;
-//     color: black;
-//     z-index: 2;
-// }
-// #pages-home .right h1{
-//     position: absolute;
-//     top: 1350px;
-//     right: 11%;
-//     font-size: 50px;
-//     color: black;
-//     z-index: 2;
-// }
+
 #pages-home .left img{
-    // position: absolute;
-    // left: 7%;
-    // height: 300px;
-    // width: 450px;
-    // height: 350px;
-    // width: 500px;
-    // height: 300px;
-    // width: 450px;
     height: 350px;
     width: 500px;
-    // border: 20px solid $default-color;
-    // border: 10px solid #fff;
-    // padding: 20px;
     cursor: pointer;
     opacity: 0.8;
 }
-// #pages-home .right{
-//     // border: 1px solid red;
-//     // flex: 1;
-//     padding-left: 15px;
-//     align-self: center;
-// }
 #pages-home .right img{
-    // position: absolute;
-    // right: 10%;
-    // right: 7%;
-    // // height: 400px;
-    // // width: 550px;
-    // height: 300px;
-    // width: 450px;
-    // height: 300px;
-    // width: 450px;
     height: 350px;
     width: 500px;
-    // border: 20px solid $default-color;
-    // border: 10px solid #fff;
-    // padding: 20px;
     cursor: pointer; 
     opacity: 0.8;
 }
 #pages-home .right img:hover{
-    // height: 350px;
-    // width: 450px;
-    // height: 350px;
-    // width: 550px;
     opacity: 1;
     transform: scaleY(1.1);
-    // border: 20px solid #fff;
 }
 #pages-home .left img:hover{
-    // height: 350px;
-    // width: 500px;
-    // height: 400px;
-    // width: 550px;
     opacity: 1;
     transform: scaleY(1.1);
-
-    // border: 20px solid #fff;
 }
 
 #pages-home .right img, #pages-home .left img{
@@ -349,6 +264,7 @@ $default-color-dark: #191919;
     background-color: #111111;
     color: #fff;
     text-align: center;
+    max-width: 440px;
 }
 #pages-home .right .text h1{
     text-align: center;
@@ -361,7 +277,6 @@ $default-color-dark: #191919;
 }
 
 #pages-home .left{
-    // border: 1px solid red;
     align-self: center;
     width: 45%;
     overflow: hidden;
@@ -369,10 +284,10 @@ $default-color-dark: #191919;
 #pages-home .left .text{
     padding: 30px;
     background-color: #111111;
-    // border-top: 5px solid black;
     color: #fff;
     text-align: center;
     margin-top: 0;
+    max-width: 440px;
 }
 #pages-home .left .text div{
     margin-top: 0;

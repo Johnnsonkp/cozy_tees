@@ -1,0 +1,71 @@
+<section class="listings-him" id="listings-index">
+
+    <div class="showcase"></div>
+ 
+
+    <div class="div-container">
+        <hr>
+    </div>
+
+    <div class="container">
+
+    <div class="side-search">
+     <div class="wrapper">
+        <h3>REFINE SEARCH</h3>
+        <br>
+        <%= search_form_for @q do |f| %>
+
+          <strong><%= f.label :TITLE %></strong>
+          <%= f.search_field :title_cont %>
+          <%= f.submit %>
+          
+          <br>
+          <br>
+          <%= sort_link(@q, :price) do %>
+            <strong>Sort by price</strong>
+          <% end %>
+          <br>
+          <br>
+
+        <% end %>
+        <%= button_to "Create Listing", new_listing_path, method: :get, class:'btn'%>
+      </div>
+
+    </div>
+
+
+    <div class="listings-wrapper">
+        <% @listings.each do |listing| %>
+            <div class="listing">
+                <%if listing.sex == 'Male' %>
+                    <%if listing.picture.attached? %>
+                    <%# <%=image_tag listing.picture, class:"img"%> 
+                        <%= link_to image_tag(listing.picture, class:"img"), listing %>
+                    <%else%>
+                        <%=image_tag "ky-jersey.jpg", alt: "Kyrie Nets Jersey", class:"img"%>
+                    <%end%>
+        
+                    <div class="title-price">
+                    
+                    <strong><%= listing.title %></strong>
+                    <p class="listing-user">By: <%= listing.user.email %></p>
+                    <%# <%= listing.price %>
+                    <div class="price-view-btn">
+                        <p>
+                        <%if current_user && listing.purchased == false%>
+                            <button data-path=<%=new_stripe_session_path%> data-listing-id=<%=listing.id%> data-stripe='payment' data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn pay-btn'> $<%=cents_to_dollars(listing.price)%></button>
+                        <%elsif listing.purchased == true%>
+                            <button class="btn" disabled>SOLD</button>
+                        <%else%>
+                            <%= button_to "Login to buy ", new_user_session_path, class:"btn"%>
+                        <%end%>
+                        </p>
+                        <%# <p><button class="btn">View More</button></p> %>
+                        <p><button class="btn view-more-btn"><%= link_to "View More", listing%></button></p>
+                        </div>
+                    </div>
+                <%end %>
+            </div>
+        <%end%>
+    </div>
+</section>
