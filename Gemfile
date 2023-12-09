@@ -67,3 +67,5 @@ gem "aws-sdk-s3", "~> 1.91"
 gem "stripe", "~> 5.30"
 
 gem "ransack", "~> 2.4"
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
