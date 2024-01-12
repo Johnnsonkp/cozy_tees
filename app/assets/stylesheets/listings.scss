@@ -19,8 +19,11 @@
     height: 220px;
     width: 100vw;
     background: url('showcase-3.png');
-    background-blend-mode: lighten;
-    background-color: rgba(255,255,255,0.5);
+    // background-blend-mode: lighten;
+    // background-color: rgba(255,255,255,0.5);
+
+    background-blend-mode: darken;
+    background-color: rgba(000,000,000,0.5);
 }
 hr{
     margin-top: 30px;
@@ -333,12 +336,8 @@ div.field.features{
     height: 220px;
     width: 100vw;
     background: url('showcase-3.png');
-    background-blend-mode: lighten;
-    background-color: rgba(255,255,255,0.5);
     background-blend-mode: darken;
-    background-color: rgba(17, 17, 17, 0.5);
-    background-blend-mode: lighten;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.2);
 }
 .price-view-btn {
     display: flex;
