@@ -96,7 +96,6 @@ The purpose of this marketplace is to cater for buyers who are wanting to purcha
 - Cloud Storage: AWS - S3
 
 <br>
-<br>
 
 ### [R12] User Stories
 <hr>
