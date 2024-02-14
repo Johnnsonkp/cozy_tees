@@ -38,7 +38,7 @@ default: &default
     - .sass
     - .scss
     - .css
-    - .module.sass
+    - .module.J
     - .module.scss
     - .module.css
     - .png
