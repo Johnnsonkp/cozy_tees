@@ -99,6 +99,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    dotenv (3.1.0)
     erubi (1.12.0)
     ffi (1.16.3)
     globalid (1.2.1)
@@ -277,6 +278,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.7)
+  dotenv
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
