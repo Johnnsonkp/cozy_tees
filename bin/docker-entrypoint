@@ -7,9 +7,6 @@ if [ "$RAILS_ENV" = "production" ]; then
   echo "Running database migrations..."
   ./bin/rails db:migrate
   
-  echo "Ensuring assets directory exists..."
-  mkdir -p public/packs
-  
   echo "Compiling webpack assets..."
   yarn install --check-files
   ./bin/webpack
