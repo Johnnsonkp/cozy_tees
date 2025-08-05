@@ -53,8 +53,11 @@ COPY --link . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN RAILS_ENV=production SECRET_KEY_BASE=DUMMY RAILS_MASTER_KEY=12345678901234567890123456789012 bundle exec rails assets:precompile
+# Skip asset precompilation during build - let Rails handle it at runtime
+# RUN RAILS_ENV=production SECRET_KEY_BASE=DUMMY RAILS_MASTER_KEY=12345678901234567890123456789012 bundle exec rails assets:precompile --verbose
+
+# Ensure assets directory exists
+RUN mkdir -p public/assets
 
 
 # Final stage for app image
