@@ -43,9 +43,8 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Install node modules
-COPY --link .yarnrc package.json package-lock.json yarn.lock ./
-COPY --link .yarn/releases/* .yarn/releases/
-RUN yarn install --frozen-lockfile
+COPY --link package.json ./
+RUN yarn install --frozen-lockfile || yarn install
 
 # Copy application code
 COPY --link . .
