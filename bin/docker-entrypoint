@@ -8,7 +8,6 @@ if [ "$RAILS_ENV" = "production" ]; then
   ./bin/rails db:migrate
   
   echo "Compiling webpack assets..."
-  yarn install --check-files
   ./bin/webpack
   
   echo "Compiling Rails assets..."
