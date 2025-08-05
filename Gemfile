@@ -77,3 +77,4 @@ gem 'dotenv'
 
 
 # export PATH="$HOME/.rbenv/bin:$PATH"
+gem "dockerfile-rails", ">= 1.6", :group => :development

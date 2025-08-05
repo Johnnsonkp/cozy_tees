@@ -27,8 +27,6 @@ $light-body: #26374c;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // justify-content: space-around;
-    // border: solid 1px red;
     box-sizing: border-box;
 }
 #shared-navbar .left{
@@ -39,7 +37,7 @@ $light-body: #26374c;
 #form{
     border: solid 1px lightgray;
     background-color: #eee;
-    background-color: $background-light;
+    background-color: var($background-light);
     border-radius: 10px;
     margin: 0;
     padding: 0;
@@ -71,7 +69,7 @@ $light-body: #26374c;
     background-image: url('http://rainbowit.net/themes/trydo/wp-content/themes/trydo/assets/images/icons/sun-01.svg');
     background-position: center center;
     background-size: cover;
-    background-color: $default-color;
+    background-color: var($default-color);
     height: 20px;
     width: 20px;
     box-sizing: border-box;
@@ -85,7 +83,7 @@ $light-body: #26374c;
     background-image: url('http://rainbowit.net/themes/trydo/wp-content/themes/trydo/assets/images/icons/vector.svg');
     background-position: center center;
     background-size: cover;
-    background-color: $default-color;
+    background-color: var($default-color);
     background-color: #fff;
     border: 3px solid #fff;
     height: 20px;
@@ -163,8 +161,8 @@ $light-body: #26374c;
     // display: none !important;
     opacity: 1;
     cursor: pointer;
-    border: solid 1px $default-color;
-    background-color: $background-light;
+    border: solid 1px var($default-color);
+    background-color: var($background-light);
     color: black;
     position: absolute;
     top: 8%;
@@ -244,7 +242,7 @@ $light-body: #26374c;
 #shared-navbar .second-nav{
     width: 100vw;
     height: 33px;
-    background-color: $background-light;
+    background-color: var($background-light);
     background-color: #f2f2f2;
     // background-color: #222222;
     color: black;
@@ -296,7 +294,7 @@ $light-body: #26374c;
 }
 #shared-navbar .second-nav li:hover{
     // height: 100%;
-    background-color: $default-color;
+    background-color: var($default-color);
     color: #fff !important;
     opacity: 0.6;
     border-bottom: transparent;

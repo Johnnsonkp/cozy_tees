@@ -1,7 +1,7 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-$default-color: #2f2f2f;
+// $default-color: #2f2f2f;
 $default-color: #161b22;
 $default-light: #fff;
 $light-body: #26374c;
@@ -26,7 +26,7 @@ $default-color-dark: #191919;
 #pages-home header{
     width: 100vw;
     height: 560px;
-    background-color: $default-light;
+    background-color: var($default-light);
     position: relative;
 }
 #pages-home #showcase{
@@ -140,8 +140,8 @@ $default-color-dark: #191919;
 }
 #pages-home .about-btn{
     margin-top: 30px;
-    border: 1px solid $default-light;
-    background-color: $default-light;
+    border: 1px solid var($default-light);
+    background-color: var($default-light);
     width: 150px;
     color: black;
     font-size: 18px;
